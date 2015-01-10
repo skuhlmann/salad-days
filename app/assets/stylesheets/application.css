@@ -11,8 +11,11 @@
  * file per style scope.
  *
  *= require ink
- *= require ink_flex
+ *= require ink-flex
  *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
+@import url(http://fonts.googleapis.com/css?family=Corben:bold);
+@import url(http://fonts.googleapis.com/css?family=Nobile);
