@@ -1,43 +1,38 @@
 <div id="hero">
-  <div class="ink-grid home">
-    <div class="column-group">
-      <div class="all-33">
-        <h1 class="white">Salad Days<i class="fa fa-leaf"></i></h1>
-      </div>
-      <div class="all-66">
-        <div id="welcome">
-          <nav class="ink-navigation">
-            <ul class="menu">
-              <li><i class="fa fa-ellipsis-v fa-3x"></i>
-                <ul class="submenu">
-                  <li>Browse Produce</li>
-                  <li>Log In</li>
-                  <li>Sign Up</li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
+  <div class="ink-grid topper">
+
+    <%= render partial: "partials/nav" %>
+
     <div class="column-group">
       <div class="all-100">
         <div id="tagline">
           <hgroup>
-            <h3>Helping fullfill your</h3>
-            <h2>Lust for Leaf</h2>
-            <form class="ink-form search-form">
-              <div class="control-group">
-                <label for="zipcode">Find Local Food</label>
-                <div class="control">
-                  <input id="zipcode" name="zipcode" type="text" placeholder="Zipcode" class="center-input">
-                  <button class="search-btn">Search</button>
-                      </div>
-                  </div>
-                </form>
+          <h3>Fullfill Your</h3>
+          <h2>Lust for Leaf</h2>
+          <form class="ink-form search-form">
+            <div class="control-group">
+              <label for="zipcode">Find Local Food</label>
+              <div class="control">
+                <input id="zipcode" name="zipcode" type="text" placeholder="Zipcode" class="center-input">
+                <button class="search-btn">Search</button>
+              </div>
+            </div>
+          </form>
           </hgroup>
         </div>
       </div>
     </div>
+
+  </div>
+</div>
+
+<div id="content-1" class="ink-grid">
+  <div class="column-group">
+    <div class="all-25"></div>
+    <div class="all-50">
+      <i class="fa fa-leaf fa-2x"></i>
+      <p class="medium-content">Salad Days is dedicated to connecting local people with local food sources. From farmer's markets, to co-ops, to backyard gardens, we'll help you eat with the seasons.</p>
+    </div>
+    <div class="all-25"></div>
   </div>
 </div>
