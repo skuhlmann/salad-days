@@ -13,6 +13,7 @@
  *= require ink
  *= require ink-flex
  *= require font-awesome
+ *= require jquery.sidr.light
  *= require_tree .
  *= require_self
  */

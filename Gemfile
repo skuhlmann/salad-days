@@ -13,6 +13,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
 gem 'ink3-rails'
 gem 'font-awesome-rails'
+gem 'sidr-rails'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
