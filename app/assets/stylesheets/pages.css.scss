@@ -11,10 +11,6 @@ p {
   line-height: 25px;
 }
 
-.home {
-  margin-left: 5%;
-  margin-top: 5%;
-}
 
 #welcome {
   margin-left: 80%;
@@ -27,14 +23,14 @@ p {
 
 #footer {
   background-color: #E6F0AF;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
   letter-spacing: 6px;
   line-height: normal;
   text-align: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
 #hero {
@@ -130,4 +126,35 @@ p {
   -moz-transition: all .5s ease-in;
   -ms-transition: all .5s ease-in;
   -o-transition: all .5s ease-in;
+}
+
+.topper {
+  padding: 0;
+}
+
+.nav {
+  width: 100%;
+  padding-top: 3%;
+  padding-left: 5%;
+
+}
+.sticky {
+  position: fixed;
+  z-index: 100;
+  background-color: #D7E8D5;
+  transition: all .25s ease-in;
+}
+
+#content-1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.medium-content {
+  color: #4A3A47;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  line-height: normal;
 }
