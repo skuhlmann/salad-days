@@ -7,14 +7,20 @@
 
     <div class="all-66">
       <div id="welcome">
-        <a id="simple-menu" href="#sidr"><i class="fa fa-ellipsis-v fa-3x"></i></a>
+        <a class="menu-link" id="simple-menu" href="#sidr"><i class="fa fa-ellipsis-v fa-3x"></i></a>
 
-        <div id="sidr">
-          <ul>
-            <li>Browse Produce</li>
-            <li>Log In</li>
-            <li>Sign Up</li>
-          </ul>
+        <div id="sidr" class="drawer">
+          <div class="site-nav">
+            <ul>
+              <a href="#"><li>Food Finder</li></a>
+              <a href="#"><li>Create a Market</li></a>
+              <a href="#"><li>Log In</li></a>
+            </ul>
+            <hr>
+            <ul class="sub-nav">
+              <li><i class="fa fa-leaf"></i> <i class="fa fa-leaf"></i></li>
+            </ul>
+          </div>
         </div>
 
       </div>
@@ -26,7 +32,9 @@
 <script>
 $(document).ready(function() {
     $('#simple-menu').sidr({
-      side: 'right'
+      side: 'right',
+      displace: false,
+      speed: 300
       });
   });
 </script>
