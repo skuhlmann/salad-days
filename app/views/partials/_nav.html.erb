@@ -1,25 +1,41 @@
 <div class="nav">
   <div class="column-group">
+
     <div class="all-33">
       <h1 class="white">Salad Days<i class="fa fa-leaf"></i></h1>
     </div>
 
     <div class="all-66">
       <div id="welcome">
-        <nav class="ink-navigation">
-          <ul class="menu">
-            <li><i class="fa fa-ellipsis-v fa-3x"></i>
-            <ul class="submenu">
-              <li>Browse Produce</li>
-              <li>Log In</li>
-              <li>Sign Up</li>
+        <a class="menu-link" id="simple-menu" href="#sidr"><i class="fa fa-ellipsis-v fa-3x"></i></a>
+
+        <div id="sidr" class="drawer">
+          <div class="site-nav">
+            <ul>
+              <a href="#"><li>Food Finder</li></a>
+              <a href="#"><li>Create a Market</li></a>
+              <a href="#"><li>Log In</li></a>
             </ul>
-            </li>
-          </ul>
-        </nav>
+            <hr>
+            <ul class="sub-nav">
+              <li><i class="fa fa-leaf"></i> <i class="fa fa-leaf"></i></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
+
   </div>
 </div>
 
+<script>
+$(document).ready(function() {
+    $('#simple-menu').sidr({
+      side: 'right',
+      displace: false,
+      speed: 300
+      });
+  });
+</script>
 

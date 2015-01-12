@@ -158,3 +158,73 @@ p {
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
   line-height: normal;
 }
+
+.menu-link {
+  color: white;
+}
+
+.menu-link:hover {
+  color: #E8ED76;
+  transition: .1s ease-in;
+  -webkit-transition: .1s ease-in;
+  -moz-transition: .1s ease-in;
+  -ms-transition: .1s ease-in;
+  -o-transition: .1s ease-in;
+}
+
+.drawer {
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 300px;
+  overflow-x: none;
+  overflow-y: none;
+  background: #4A3A47;
+  box-shadow: inset 0 0 0px 0px #ebebeb;
+}
+
+.site-nav ul {
+  padding: 10px;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Corben', Georgia, Times, serif;
+  font-size: 35px;
+  text-align: right;
+}
+
+.sidr ul li {
+  display: block;
+  margin: 0px 0px 0px 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  padding-bottom: 40px;
+  padding-right: 10px;
+}
+
+.sidr ul {
+  border-top: 0px;
+  border-bottom: 0px;
+  padding-top: 80px;
+}
+
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.site-nav a:hover {
+  color: #E8ED76;
+  transition: .1s ease-in;
+  -webkit-transition: .1s ease-in;
+  -moz-transition: .1s ease-in;
+  -ms-transition: .1s ease-in;
+  -o-transition: .1s ease-in;
+}
+
+.sub-nav li {
+  text-align: center;
+}
