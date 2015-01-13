@@ -1,0 +1,10 @@
+<h1><%= @market.name %></h1>
+  <% if @market.image.exists? %>
+    <p><%= image_tag @market.image.url %></p>
+  <% end %>
+<p><%= @market.address %></p>
+<p><%= @market.schedule %></p>
+<p><%= @market.products %></p>
+<p><%= link_to "Edit This Market", edit_market_path(@market.slug) %></p> <br />
+<p><%= link_to "Delete This Market", market_path(@market), method: :delete, data: {confirm: "Really delete the market?"} %></p>
+<br />
