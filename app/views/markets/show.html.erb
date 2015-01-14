@@ -12,6 +12,10 @@
     <li><%= listing.name %></li>
     <li><%= listing.active %></li>
     <li><%= listing.harvest_date %></li>
+    <li><% if listing.image.exists? %>
+      <%= image_tag listing.image.url(:thumb) %>
+    <% end %></li>
+
     <li><%= link_to "Edit Listing", edit_market_listing_path(@market.slug, listing.id) %></li>
   <% end %>
   </ul>
