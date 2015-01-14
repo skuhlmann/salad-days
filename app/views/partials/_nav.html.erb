@@ -13,8 +13,12 @@
           <div class="site-nav">
             <ul>
               <a href="#"><li>Food Finder</li></a>
-              <a href="#"><li>Sign up to open your own market</li></a>
-              <a href="#"><li>Login</li></a>
+              <% if current_user %>
+                <%= link_to "Visit My Profile", user_path(current_user) %><br><br>
+                <%= link_to "Sign out", logout_path, method: :delete  %>
+              <% else %>
+                <%= link_to "Login with Twitter", "/auth/twitter" %>
+              <% end %>
             </ul>
             <hr>
             <ul class="sub-nav">

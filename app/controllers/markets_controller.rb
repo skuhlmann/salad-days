@@ -32,8 +32,6 @@ class MarketsController < ApplicationController
   end
 
   def destroy
-    binding.pry
-
     @market.destroy
     redirect_to root_path
   end
