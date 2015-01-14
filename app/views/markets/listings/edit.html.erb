@@ -1,0 +1,23 @@
+<h1>Editing <%= @listing.name %> for <%= current_market.name %></h1>
+
+<%= form_tag({controller: "listings", action: "update"}, method: "put") do %>
+  <div>
+    <%= label_tag(:name) %>
+    <%= text_field(:listing, :name) %>
+  </div>
+  <div>
+    <%= label_tag(:description) %>
+    <%= text_field(:listing, :description) %>
+  </div>
+  <div>
+    <%= label_tag(:harvest_date) %>
+    <%= date_field(:listing, :harvest_date) %>
+  </div>
+
+  <%= submit_tag %>
+<% end %>
+
+
+<ul>
+  <li><%= link_to 'Show', market_path(@market.slug) %></li>
+</ul>

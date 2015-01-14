@@ -1,7 +1,6 @@
-class Listings::Markets < ApplicationController
+class Markets::ListingsController < ApplicationController
 
   before_action :set_listing, only: [:edit, :update, :destroy, :show]
-  before_action :set_market, only: [:edit, :update, :destroy, :show]
 
   def show
     @market = Market.find(@listing.market_id)
@@ -12,7 +11,7 @@ class Listings::Markets < ApplicationController
   end
 
   def create
-    @listing = current_market.listing.new(listing_params)
+    @listing = current_market.listings.new(listing_params)
     if @listing.save
       flash[:notice] = "Listing was successfully created."
       redirect_to market_path(current_market.slug)
@@ -22,6 +21,7 @@ class Listings::Markets < ApplicationController
   end
 
   def edit
+    @market = current_market
   end
 
   def update
@@ -46,6 +46,7 @@ class Listings::Markets < ApplicationController
   end
 
   def set_listing
-    @listing = current_market.find(params[:id])
+    @listing = current_market.listings.find(params[:id])
   end
+
 end

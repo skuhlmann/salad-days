@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_market
 
   def current_market
-    @current_market ||= Market.find_by(slug: session[:market_slug])
+    @current_market ||= Market.find_by(slug: params[:market_slug])
   end
 end

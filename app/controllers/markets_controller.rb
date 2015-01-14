@@ -1,8 +1,7 @@
 class MarketsController < ApplicationController
-  before_action :set_market, only: [:show, :edit, :destroy]
+  before_action :set_market, only: [:show, :edit, :destory]
 
   def show
-    @market = Market.find_by(slug: params[:slug])
   end
 
   def new
@@ -33,6 +32,8 @@ class MarketsController < ApplicationController
   end
 
   def destroy
+    binding.pry
+
     @market.destroy
     redirect_to root_path
   end

@@ -1,10 +1,10 @@
-<h1><%= "#{@market.name} : #{@listing.name} %></h1>
+<h1><%= "#{@market.name} : #{@listing.name}" %></h1>
   <% if @listing.image.exists? %>
     <p><%= image_tag @listing.image.url %></p>
   <% end %>
 <p><%= @listing.description %></p>
 <p><%= @listing.harvest_date %></p>
-<p><%= link_to "Edit This Listing", edit_market_listing_path(@listing) %></p> <br />
-<p><%= link_to "Delete This Listing", market_listing_path(@listing), method: :delete, data: {confirm: "Really delete the listing?"} %></p>
+<p><%= link_to "Edit This Listing", edit_market_listing_path(@market.slug, @listing) %></p> <br />
+<p><%= link_to "Delete This Listing", market_listing_path(@market.slug, @listing), method: :delete, data: {confirm: "Really delete the listing?"} %></p>
 <br />
 <p><%= link_to "Back to #{@market.name}", market_path(@market.slug) %><p>
