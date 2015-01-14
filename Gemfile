@@ -14,6 +14,8 @@ gem 'unicorn'
 gem 'ink3-rails'
 gem 'font-awesome-rails'
 gem 'sidr-rails'
+gem 'paperclip'
+gem 'rmagick'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
@@ -21,6 +23,7 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'pry'
   gem 'dotenv-rails'
 end
 

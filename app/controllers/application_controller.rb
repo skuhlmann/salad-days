@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  helper_method :current_market
+
+  def current_market
+    @current_market ||= Market.find_by(slug: params[:market_slug])
+  end
 end

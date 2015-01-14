@@ -11,9 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150114161617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "listings", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.date     "harvest_date"
+    t.boolean  "active",             default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "market_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "listings", ["market_id"], name: "index_listings_on_market_id", using: :btree
+
+  create_table "markets", force: true do |t|
+    t.string   "name"
+    t.string   "google_link"
+    t.string   "full_address"
+    t.string   "schedule"
+    t.string   "products"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "zip"
+    t.string   "slug"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+  end
 
 end

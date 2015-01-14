@@ -1,0 +1,21 @@
+<h1><%= @market.name %></h1>
+  <% if @market.image.exists? %>
+    <p><%= image_tag @market.image.url %></p>
+  <% end %>
+<p><%= @market.full_address %></p>
+<p><%= @market.schedule %></p>
+<p><%= @market.products %></p>
+<% if !@market.listings.empty? %>
+  <h3>Listings</h3>
+  <ul>
+  <% @market.listings.each do |listing| %>
+    <li><%= listing.name %></li>
+    <li><%= listing.active %></li>
+    <li><%= listing.harvest_date %></li>
+    <li><%= link_to "Edit Listing", edit_market_listing_path(@market.slug, listing.id) %></li>
+  <% end %>
+  </ul>
+<% end %>
+<p><%= link_to "Add a Listing", new_market_listing_path(@market.slug) %></p>
+<p><%= link_to "Edit This Market", edit_market_path(@market.slug) %></p> <br />
+<p><%= link_to "Delete This Market", market_path(@market.slug), method: :delete, data: {confirm: "Really delete the market?"} %></p>
