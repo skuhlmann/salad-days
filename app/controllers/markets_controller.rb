@@ -1,5 +1,5 @@
 class MarketsController < ApplicationController
-  before_action :set_market, only: [:show, :edit, :update, :destroy]
+  before_action :set_market, only: [:show, :edit, :destroy]
 
   def show
     @market = Market.find_by(slug: params[:slug])
@@ -13,7 +13,7 @@ class MarketsController < ApplicationController
     @market = Market.create(market_params)
     if @market.save
       flash[:notice] = "Market was successfully created."
-      redirect_to market_path(current_market.slug)
+      redirect_to market_path(@market.slug)
     else
       render :new
     end
@@ -23,9 +23,10 @@ class MarketsController < ApplicationController
   end
 
   def update
-    if market.update_attributes(market_params)
+    @market = Market.find(params[:slug])
+    if @market.update_attributes(market_params)
       flash[:notice] = "Market was successfully updated."
-      redirect_to market_path(market_path_slug)
+      redirect_to market_path(@market.slug)
     else
       render :edit
     end
@@ -39,7 +40,7 @@ class MarketsController < ApplicationController
   private
 
   def market_params
-    params.require(:market).permit(:name, :address, :zip_code, :products, :image)
+    params.require(:market).permit(:name, :street, :zip, :city, :state, :products, :image)
   end
 
   def set_market
