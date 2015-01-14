@@ -4,6 +4,9 @@
   <% end %>
 <p><%= @listing.description %></p>
 <p><%= @listing.harvest_date %></p>
+<p><% if @listing.image.exists? %>
+  <%= image_tag @listing.image.url(:thumb) %>
+<% end %></p>
 <p><%= link_to "Edit This Listing", edit_market_listing_path(@market.slug, @listing) %></p> <br />
 <p><%= link_to "Delete This Listing", market_listing_path(@market.slug, @listing), method: :delete, data: {confirm: "Really delete the listing?"} %></p>
 <br />
