@@ -16,6 +16,8 @@ gem 'font-awesome-rails'
 gem 'sidr-rails'
 gem 'paperclip'
 gem 'rmagick'
+gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
