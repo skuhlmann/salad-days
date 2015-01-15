@@ -11,7 +11,7 @@
         <div id="sidr" class="drawer">
           <div class="site-nav">
             <ul>
-              <a href="#"><li>Food Finder</li></a>
+              <%= link_to "Find Local Food", search_results_path %><br><br>
               <% if current_user %>
                 <%= link_to "Visit My Profile", user_path(current_user) %><br><br>
                 <%= link_to "Sign out", logout_path, method: :delete  %>

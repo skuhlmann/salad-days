@@ -4,13 +4,13 @@ Rails.application.routes.draw do
 
   get "/search_results", to: "pages#search_results"
 
-  resources :markets, path: "markets", param: :slug, except: [:index, :new, :create] do
+  resources :markets, path: "markets", param: :slug, only: [:show, :edit, :update] do
     resources :listings, controller: "markets/listings"
   end
 
-  resources :markets, only: [:new, :create]
-
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :markets, only: [:new, :create, :delete]
+  end
 
   get "/auth/twitter/callback", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
