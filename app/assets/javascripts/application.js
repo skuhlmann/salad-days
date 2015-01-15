@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.sidr
-//= require turbolinks
 //= require ink-all
 //= require autoload
 //= require html5shiv

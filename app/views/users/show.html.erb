@@ -1,3 +1,31 @@
-<%= @user.name %>
-<%= @user.uid %>
-<%= @user.provider %>
+<div id="sub-line" class="column-group">
+  <div class="all-75">
+    <h2>Profile</h2>
+  </div>
+  <div class="all-25 zip">
+    <h5><%= @user.name %></h5>
+    <%= image_tag @user.image %>
+  </div>
+</div>
+
+<div class="column-group">
+  <% if @user.market == nil %>
+    <div class="all-75">
+      <p><%= link_to "Create a Market", new_user_market_path(@user.id), class: "listing-btn" %></p>
+    </div>
+  <% else %>
+  <div class="all-75">
+    <p><%= @user.market.name %></p>
+    <p>More market details here</p>
+  </div>
+  <% end %>
+
+  <div class="all-25 zip">
+    <p class="medium-content">Twitter ID: <%= @user.uid %></p>
+    <p class="medium-content">Location: <%= @user.location %></p>
+    <p class="medium-content">Description: <%= @user.description %></p>
+  </div>
+</div>
+
+
+

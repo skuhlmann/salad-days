@@ -1,0 +1,33 @@
+  <div class="column-group">
+
+    <div class="all-75">
+      <a href="<%= root_path %>"><h1 class="white">Salad Days<i class="fa fa-leaf"></i></h1></a>
+    </div>
+
+    <div class="all-25">
+      <div id="welcome">
+        <a class="menu-link" id="simple-menu" href="#sidr"><i class="fa fa-ellipsis-v fa-3x"></i></a>
+
+        <div id="sidr" class="drawer">
+          <div class="site-nav">
+            <ul>
+              <%= link_to "Find Local Food", search_results_path %><br><br>
+              <% if current_user %>
+                <%= link_to "Visit My Profile", user_path(current_user) %><br><br>
+                <%= link_to "Sign out", logout_path, method: :delete  %>
+              <% else %>
+                <%= link_to "Login with Twitter", "/auth/twitter" %>
+              <% end %>
+            </ul>
+            <hr>
+            <ul class="sub-nav">
+              <li><i class="fa fa-leaf"></i> <i class="fa fa-leaf"></i></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+

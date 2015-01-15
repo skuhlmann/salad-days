@@ -1,5 +1,5 @@
 $(document).ready(function() {
-   var stickyNavTop = $('.nav').offset().top;
+   var stickyNavTop = $('.site-nav').offset().top;
 
    var stickyNav = function(){
      var scrollTop = $(window).scrollTop();
@@ -17,4 +17,6 @@ $(document).ready(function() {
          stickyNav();
    });
  });
+
+
 

@@ -44,6 +44,12 @@ p {
   background-size: cover;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #E8ED76;
+}
+
+
 #tagline {
   text-align: center;
 }
@@ -88,12 +94,6 @@ p {
   text-transform: uppercase;
   display: inline-block;
   box-shadow: none;
-  -webkit-box-shadow: none;
-  transition: all .5s ease-in;
-  -webkit-transition: all .5s ease-in;
-  -moz-transition: all .5s ease-in;
-  -ms-transition: all .5s ease-in;
-  -o-transition: all .5s ease-in;
 }
 
 .center-input {
@@ -103,6 +103,7 @@ p {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
 .search-btn {
   border-radius: 6px;
   -moz-border-radius: 6px;
@@ -120,12 +121,6 @@ p {
   text-transform: uppercase;
   display: inline-block;
   box-shadow: none;
-  -webkit-box-shadow: none;
-  transition: all .5s ease-in;
-  -webkit-transition: all .5s ease-in;
-  -moz-transition: all .5s ease-in;
-  -ms-transition: all .5s ease-in;
-  -o-transition: all .5s ease-in;
 }
 
 .topper {
@@ -138,11 +133,24 @@ p {
   padding-left: 5%;
 
 }
+
+.site-nav {
+  width: 100%;
+  padding-top: 3%;
+  padding-left: 5%;
+
+}
+
 .sticky {
   position: fixed;
   z-index: 100;
   background-color: #D7E8D5;
   transition: all .25s ease-in;
+}
+
+.results {
+  width: 80%;
+  padding-top: 15%;
 }
 
 #content-1 {
@@ -227,4 +235,25 @@ p {
 
 .sub-nav li {
   text-align: center;
+}
+
+.zip {
+  text-align: right;
+}
+
+#sub-line h2 {
+  color: #4A3A47;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  line-height: normal;
+}
+
+#sub-line h5 {
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 40px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #E8ED76;
 }
