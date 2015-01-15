@@ -1,5 +1,8 @@
 class Listing < ActiveRecord::Base
   belongs_to :market
+
+  validates :name, :harvest_date, :market_id, presence: true
+
   has_attached_file :image,
     styles: {
     listing: '500x300#',

@@ -2,10 +2,15 @@ class Market < ActiveRecord::Base
   has_many :listings
   belongs_to :user
 
+  validates :name, :user_id, :email, :street, :city, :state, :zip, presence: true
   validates :name, uniqueness: true
   validates :slug, uniqueness: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, format: { with: VALID_EMAIL_REGEX }
+  validates :zip, length: { is: 5, message: "Must be 5 digits long" }
+  validates :state, length: { is: 2, message: "Must be a two character abbreviation" }
 
-  before_save :generate_slug
+  before_save :generate_slug, :generate_full_address
 
   has_attached_file :image,
     styles: {
@@ -18,4 +23,10 @@ class Market < ActiveRecord::Base
   def generate_slug
     self.slug = name.parameterize
   end
+
+  def generate_full_address
+    self.full_address = "#{street}, #{city}, #{state}, #{zip}"
+    #will break this into a more robust before action when we get api data to check if full address exists
+  end
+
 end
