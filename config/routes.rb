@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/search_results", to: "pages#search_results"
 
   resources :markets, path: "markets", param: :slug, only: [:show, :edit, :update] do
-    resources :listings, controller: "markets/listings"
+    resources :listings, controller: "markets/listings", except: [:show]
   end
 
   resources :users, only: [:show] do
