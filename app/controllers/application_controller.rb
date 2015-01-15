@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_market
   helper_method :current_user
 
-  private
-
   def current_market
     @current_market ||= Market.find_by(slug: params[:market_slug])
   end
