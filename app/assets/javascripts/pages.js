@@ -1,13 +1,5 @@
 $(document).ready(function() {
-    $('#simple-menu').sidr({
-      side: 'right',
-      displace: false,
-      speed: 300
-      });
-  });
-
-$(document).ready(function() {
-   var stickyNavTop = $('.nav').offset().top;
+   var stickyNavTop = $('.site-nav').offset().top;
 
    var stickyNav = function(){
      var scrollTop = $(window).scrollTop();
@@ -25,5 +17,6 @@ $(document).ready(function() {
          stickyNav();
    });
  });
+
 
 
