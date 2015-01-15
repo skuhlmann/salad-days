@@ -1,7 +1,16 @@
+<h1>Search Results</h1>
 <% @markets.each do |market| %>
-  <%= market.name %>
-  <%= link_to "View Market", market_path(market.slug) %>
   <% market.listings.each do |listing| %>
-    <%= listing.name %>
+    <div class="column-group horizontal-gutters">
+      <div class="all-40">
+        <h3 class="listing-text"><%= market.name %></h3>
+        <h2 class="listing-text"><%= listing.name %></h2>
+        <%= listing.description %>
+        <p><%= link_to "View Market Details and Location", market_path(market.slug) %></p>
+      </div>
+      <div class="all-60">
+        <%= image_tag listing.image.url(:listing) %>
+      </div>
+    </div>
   <% end %>
 <% end %>

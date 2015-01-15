@@ -44,6 +44,11 @@ p {
   background-size: cover;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
+
 #tagline {
   text-align: center;
 }
@@ -88,12 +93,6 @@ p {
   text-transform: uppercase;
   display: inline-block;
   box-shadow: none;
-  -webkit-box-shadow: none;
-  transition: all .5s ease-in;
-  -webkit-transition: all .5s ease-in;
-  -moz-transition: all .5s ease-in;
-  -ms-transition: all .5s ease-in;
-  -o-transition: all .5s ease-in;
 }
 
 .center-input {
@@ -120,12 +119,6 @@ p {
   text-transform: uppercase;
   display: inline-block;
   box-shadow: none;
-  -webkit-box-shadow: none;
-  transition: all .5s ease-in;
-  -webkit-transition: all .5s ease-in;
-  -moz-transition: all .5s ease-in;
-  -ms-transition: all .5s ease-in;
-  -o-transition: all .5s ease-in;
 }
 
 .topper {
@@ -138,11 +131,24 @@ p {
   padding-left: 5%;
 
 }
+
+.site-nav {
+  width: 100%;
+  padding-top: 3%;
+  padding-left: 5%;
+
+}
+
 .sticky {
   position: fixed;
   z-index: 100;
   background-color: #D7E8D5;
   transition: all .25s ease-in;
+}
+
+.results {
+  width: 80%;
+  padding-top: 15%;
 }
 
 #content-1 {

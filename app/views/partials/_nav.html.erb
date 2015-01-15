@@ -1,45 +1,5 @@
 <div class="nav">
-  <div class="column-group">
-
-    <div class="all-75">
-      <h1 class="white">Salad Days<i class="fa fa-leaf"></i></h1>
-    </div>
-
-    <div class="all-25">
-      <div id="welcome">
-        <a class="menu-link" id="simple-menu" href="#sidr"><i class="fa fa-ellipsis-v fa-3x"></i></a>
-
-        <div id="sidr" class="drawer">
-          <div class="site-nav">
-            <ul>
-              <a href="#"><li>Food Finder</li></a>
-              <% if current_user %>
-                <%= link_to "Visit My Profile", user_path(current_user) %><br><br>
-                <%= link_to "Sign out", logout_path, method: :delete  %>
-              <% else %>
-                <%= link_to "Login with Twitter", "/auth/twitter" %>
-              <% end %>
-            </ul>
-            <hr>
-            <ul class="sub-nav">
-              <li><i class="fa fa-leaf"></i> <i class="fa fa-leaf"></i></li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
+  <%= render partial: "partials/site_nav" %>
 </div>
 
-<script>
-$(document).ready(function() {
-    $('#simple-menu').sidr({
-      side: 'right',
-      displace: false,
-      speed: 300
-      });
-  });
-</script>
 

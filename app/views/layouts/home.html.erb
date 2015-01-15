@@ -7,15 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="site-nav sticky">
-  <div class="ink-grid topper">
-    <%= render partial: "partials/site_nav" %>
-  </div>
-</div>
 
-<div class="ink-grid results">
   <%= yield %>
-</div>
+
   <%= render partial: "partials/footer" %>
 </body>
 </html>
