@@ -1,0 +1,7 @@
+<% @markets.each do |market| %>
+  <%= market.name %>
+  <%= link_to "View Market", market_path(market.slug) %>
+  <% market.listings.each do |listing| %>
+    <%= listing.name %>
+  <% end %>
+<% end %>
