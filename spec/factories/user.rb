@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :user do
     name { Faker::Name.name }
-    uid "392993516"
+    uid "abc123"
     provider "twitter"
-
+    location "Denver"
   end
 end

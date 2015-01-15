@@ -27,9 +27,16 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
     builder (3.2.2)
+    capybara (2.4.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.4)
@@ -42,6 +49,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    database_cleaner (1.3.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (1.0.2)
@@ -71,12 +79,17 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.2)
     kgio (2.9.2)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
+    mini_portile (0.6.1)
     minitest (5.5.0)
     multi_json (1.10.1)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
     oauth (0.4.7)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
@@ -97,6 +110,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -175,13 +190,17 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  capybara
   coffee-rails (~> 4.0.0)
+  database_cleaner
   dotenv-rails
   factory_girl_rails
   faker
@@ -189,11 +208,13 @@ DEPENDENCIES
   ink3-rails
   jbuilder (~> 2.0)
   jquery-rails
+  launchy
   omniauth
   omniauth-twitter
   paperclip
   pg
   pry
+  pry-rails
   rails (= 4.1.7)
   rmagick
   rspec-rails
