@@ -4,6 +4,8 @@ SimpleCov.start do
 end
 require 'factory_girl_rails'
 require 'faker'
+require 'omniauth'
+require 'database_cleaner'
 
 RSpec.configure do |config|
 
@@ -17,4 +19,22 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+end
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({ provider: "twitter", uid: "testuid", info: { name: "Trevor", location: "Denver" }})
+
+def log_in
+  visit root_path
+  click_link_or_button "Login with Twitter"
 end

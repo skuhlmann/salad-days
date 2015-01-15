@@ -1,10 +1,6 @@
 class Markets::ListingsController < ApplicationController
 
-  before_action :set_listing, only: [:edit, :update, :destroy, :show]
-
-  def show
-    @market = Market.find(@listing.market_id)
-  end
+  before_action :set_listing, only: [:edit, :update, :destroy]
 
   def new
     @listing = current_market.listings.new
