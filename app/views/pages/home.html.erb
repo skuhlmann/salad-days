@@ -14,7 +14,7 @@
               <label for="zipcode">Find Local Food</label>
               <div class="control">
                 <input id="zipcode" name="zipcode" type="text" placeholder="Zipcode" class="center-input">
-                <button class="search-btn">Search</button>
+                <%= link_to "Search", search_results_path, class: "search-btn" %>
               </div>
             </div>
           </form>

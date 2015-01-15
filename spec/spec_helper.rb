@@ -1,10 +1,14 @@
-
 require 'simplecov'
 SimpleCov.start do
   add_filter '/spec/'
 end
- See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'factory_girl_rails'
+require 'faker'
+
 RSpec.configure do |config|
+
+  config.include FactoryGirl::Syntax::Methods
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
@@ -13,19 +17,4 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.filter_run :focus
-  config.run_all_when_everything_filtered = true
-
-  config.disable_monkey_patching!
-
-  if config.files_to_run.one?
-    config.default_formatter = 'doc'
-  end
-
-  config.profile_examples = 10
-
-  config.order = :random
-
-  Kernel.srand config.seed
-=end
 end

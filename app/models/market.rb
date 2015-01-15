@@ -1,5 +1,6 @@
 class Market < ActiveRecord::Base
   has_many :listings
+  belongs_to :user
 
   validates :name, uniqueness: true
   validates :slug, uniqueness: true
