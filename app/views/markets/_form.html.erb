@@ -1,53 +1,57 @@
-<%= form_for([:user, @market], html: {multipart: true}) do |f| %>
-  <% if @market.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@market.errors.count, "error") %> prohibited this market from being saved:</h2>
+<div id="salad-form">
 
-      <ul>
-      <% @market.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_for([:user, @market], html: {multipart: true, class: "ink-form"}) do |f| %>
+    <% if @market.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@market.errors.count, "error") %> prohibited this market from being saved:</h2>
+
+        <ul>
+        <% @market.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="column-group">
+      <div class="control-group required all-50">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="control-group required all-50">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, class: "control" %>
+      </div>
+      <div class="control-group all-50">
+        <%= f.label :products, "List some common products" %><br>
+        <%= f.text_field :products %>
+      </div>
+      <div class="control-group required all-50">
+        <%= f.label :street %><br>
+        <%= f.text_field :street %>
+      </div>
+      <div class="control-group required all-50">
+        <%= f.label :city %><br>
+        <%= f.text_field :city %>
+      </div>
+      <div class="control-group required all-50">
+        <%= f.label :state %><br>
+        <%= f.text_field :state %>
+      </div>
+      <div class="control-group required all-50">
+        <%= f.label :zip %><br>
+        <%= f.text_field :zip %>
+      </div >
+      <div class="control-group all-50">
+        <%= f.label :image, "Attach an Image" %><br />
+        <%= f.file_field :image %>
+      </div>
+      <div class="all-10"></div>
+      <div class="control-group all-80">
+        <%= f.submit "Add My Market", class: "salad-btn" %>
+      </div>
+      <div class="all-10"></div>
     </div>
   <% end %>
-
-  <div>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div>
-    <%= f.label :products %><br>
-    <%= f.text_field :products %>
-  </div>
-  <div>
-    <%= f.label :street %><br>
-    <%= f.text_field :street %>
-  </div>
-  <div>
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div>
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div>
-    <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
-  </div>
-  <p>
-    <% if  @market.image.exists? %>
-      <%= image_tag @market.image.url %><br />
-    <% end %>
-    <%= f.label :image, "Attach an Image" %><br />
-    <%= f.file_field :image %>
-  </p>
-
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

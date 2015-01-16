@@ -1,16 +1,9 @@
-<div id="sub-line" class="column-group">
-  <div class="all-75">
-    <h2>Profile</h2>
-  </div>
-  <div class="all-25 zip">
-    <h5><%= @user.name %></h5>
-    <%= image_tag @user.image %>
-  </div>
-</div>
+<%= render partial: "partials/profile_header", locals: {:user => @user} %>
 
 <div class="column-group">
-  <% if @user.market == nil %>
+  <% if @user.market.blank? %>
     <div class="all-75">
+      <p class="medium-content">You haven't opened a market yet.</p>
       <p><%= link_to "Create a Market", new_user_market_path(@user.id), class: "listing-btn" %></p>
     </div>
   <% else %>
@@ -26,6 +19,13 @@
     <p class="medium-content">Description: <%= @user.description %></p>
   </div>
 </div>
+
+<% if @user.market.blank? %>
+  <div class="spacer">
+  </div>
+<% end %>
+
+
 
 
 
