@@ -16,6 +16,7 @@
                 <%= link_to "Visit My Profile", user_path(current_user) %><br><br>
                 <%= link_to "Sign out", logout_path, method: :delete  %>
               <% else %>
+                <i class="fa fa-twitter"></i>
                 <%= link_to "Login with Twitter", "/auth/twitter" %>
               <% end %>
             </ul>

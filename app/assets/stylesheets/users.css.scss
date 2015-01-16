@@ -1,0 +1,44 @@
+#notice {
+  z-index: 100;
+  width: 20%;
+}
+
+.ink-alert.basic {
+  margin-top: 0;
+  z-index: 100;
+  text-align: center;
+}
+
+.spacer {
+  height: 400px;
+}
+
+#salad-form input {
+  border-radius: 6px;
+  width: 80%;
+}
+
+.salad-btn {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  padding: 18px 30px;
+  font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  width: 80%;
+  line-height: normal;
+  color: #D7E8D5;
+  border: 3px solid #D7E8D5;
+  text-align: center;
+  background: rgba(0,0,0,0);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: none;
+}
+
+.salad-btn:hover {
+  color: #FFCD57;
+}
+
