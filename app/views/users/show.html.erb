@@ -4,7 +4,7 @@
   <% if @user.market.blank? %>
     <div class="all-75">
       <p class="medium-content">You haven't opened a market yet.</p>
-      <p><%= link_to "Create a Market", new_user_market_path(@user.id), class: "listing-btn" %></p>
+      <p><%= link_to "Create a Market", new_market_path(@user.id), class: "listing-btn" %></p>
     </div>
   <% else %>
   <div class="all-75">

@@ -1,6 +1,8 @@
 <div id="sub-line" class="column-group">
   <div class="all-75">
-    <h2><%= image_tag user.image, size: "40x40" %> Your Profile</h2>
+    <a href="<%= user_path(user) %>">
+      <h2><%= image_tag user.image, size: "40x40" %> Your Profile</h2>
+    </a>
   </div>
   <div class="all-25 zip">
     <h5><%= user.name %></h5>

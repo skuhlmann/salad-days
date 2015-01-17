@@ -46,7 +46,6 @@ RSpec.describe Market, :type => :model do
         expect(@market).not_to be_valid
       end
 
-
       it "must have an email" do
         @market.email = nil
         expect(@market).not_to be_valid
@@ -92,6 +91,18 @@ RSpec.describe Market, :type => :model do
         expect(@market).not_to be_valid
       end
 
+      it "must have a unique user id" do
+         another_market = Market.create({
+            name: "Another Market Name",
+            email: "email@example.com",
+            street: "123 Main St.",
+            city: "Denver",
+            state: "CO",
+            zip: "80205",
+            user_id: 1
+            })
+         expect(another_market).not_to be_valid
+       end
 
        it "must have a unique name" do
          another_market = Market.create({
@@ -101,6 +112,7 @@ RSpec.describe Market, :type => :model do
             city: "Denver",
             state: "CO",
             zip: "80205",
+            user_id: 2
             })
          expect(another_market).not_to be_valid
        end
@@ -113,6 +125,7 @@ RSpec.describe Market, :type => :model do
             city: "Denver",
             state: "CO",
             zip: "80205",
+            user_id: 2
             })
          expect(another_market).not_to be_valid
        end

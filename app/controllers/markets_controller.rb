@@ -10,7 +10,7 @@ class MarketsController < ApplicationController
 
   def create
     @market = Market.create(market_params)
-    assign_user
+    #assign_user
     if @market.save
       flash[:notice] = "Market was successfully created."
       redirect_to market_path(@market.slug)
@@ -40,7 +40,7 @@ class MarketsController < ApplicationController
   private
 
   def market_params
-    params.require(:market).permit(:email, :name, :street, :zip, :city, :state, :products, :image)
+    params.require(:market).permit(:user_id, :email, :name, :street, :zip, :city, :state, :products, :image)
   end
 
   def set_market

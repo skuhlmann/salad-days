@@ -17,6 +17,7 @@ gem 'paperclip'
 gem 'rmagick'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'cancancan', '~> 1.10'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring',        group: :development
