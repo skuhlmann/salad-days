@@ -1,31 +1,35 @@
-<h1>Editing <%= @listing.name %> for <%= current_market.name %></h1>
+<%= render partial: "partials/profile_header", locals: {:user => current_user} %>
 
-<%= form_tag({controller: "listings", action: "update"}, method: "put", multipart: true) do %>
-  <div>
-    <%= label_tag(:name) %>
-    <%= text_field(:listing, :name) %>
-  </div>
-  <div>
-    <%= label_tag(:description) %>
-    <%= text_field(:listing, :description) %>
-  </div>
-  <div>
-    <%= label_tag(:harvest_date) %>
-    <%= date_field(:listing, :harvest_date) %>
-  </div>
-  <p>
-    <% if  @listing.image.exists? %>
-      <%= image_tag @listing.image.url %><br />
-    <% end %>
-    <%= label_tag(:image, "Attach an Image") %><br />
-    <%= file_field(:listing, :image) %>
-  </p>
+<p class="medium-content">Editing <%= @listing.name %></p>
 
+<div id="salad-form">
+  <%= form_tag({controller: "listings", action: "update"}, method: "put", multipart: true, class: "ink-form") do %>
+    <div class="column-group">
+      <div class="control-group required all-50">
+        <%= label_tag(:name) %></br>
+        <%= text_field(:listing, :name) %>
+      </div>
+      <div class="control-group required all-50">
+        <%= label_tag(:harvest_date) %>
+        <%= date_field(:listing, :harvest_date) %>
+      </div>
+      <div class="control-group required all-50">
+        <%= label_tag(:description) %>
+        <%= text_area(:listing, :description) %>
+      </div>
+      <div class="control-group required all-50">
+        <% if  @listing.image.exists? %>
+          <%= image_tag @listing.image.url(:thumb) %><br />
+        <% end %>
+        <%= label_tag(:image, "Attach or change image") %><br />
+        <%= file_field(:listing, :image) %>
+      </div>
+      <div class="all-10"></div>
+      <div class="control-group all-80">
+        <%= submit_tag "Update Listing", class: "listing-btn" %>
+      </div>
+      <div class="all-10"></div>
+    </div>
+  <% end %>
+</div>
 
-  <%= submit_tag %>
-<% end %>
-
-
-<ul>
-  <li><%= link_to 'Show', market_path(@market.slug) %></li>
-</ul>

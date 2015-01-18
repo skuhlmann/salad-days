@@ -1,4 +1,6 @@
-<h1>New Listing for <%= current_market.name %></h1>
+<%= render partial: "partials/profile_header", locals: {:user => current_user} %>
+
+<p class="medium-content">Create a Listing for <%= current_market.name.titleize %></p>
 
 <%= render 'form' %>
 

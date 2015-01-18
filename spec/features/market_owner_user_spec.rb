@@ -56,6 +56,47 @@ describe "Market owner", type: :feature do
     expect(page).to have_text("Market details updated")
     expect(page).to have_text("Race Street Farms")
   end
+
+  it "can add a new listing for thier market" do
+    user = User.last
+    market = create(:market, user: user)
+
+    visit user_path(user)
+    click_link_or_button("Add a listing")
+    fill_in("listing_name", with: "Turnip")
+    fill_in("listing_description", with: "A description")
+    select("2015", from: "listing_harvest_date_1i")
+    select("January", from: "listing_harvest_date_2i")
+    select("22", from: "listing_harvest_date_3i")
+    click_button("Create Listing")
+
+    expect(current_path).to eq(user_path(user))
+    expect(page).to have_text("Listing Added")
+    expect(page).to have_text("Turnip")
+  end
+
+  xit "can mark a listing as sold or expired" do
+    user = User.last
+    market = create(:market, user: user)
+    listing = create(:listing, market: market)
+
+    visit user_path(user)
+  end
+
+  it "can edit and existing listing" do
+    user = User.last
+    market = create(:market, user: user)
+    listing = create(:listing, market: market)
+
+    visit user_path(user)
+    click_link_or_button("Edit listing")
+    fill_in("listing_name", with: "A new listing name")
+    click_button("Update Listing")
+
+    expect(current_path).to eq(user_path(user))
+    expect(page).to have_text("Listing Updated")
+    expect(page).to have_text("A new listing name")
+  end
 end
 
 
