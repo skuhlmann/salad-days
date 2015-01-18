@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Market owner flow", type: :feature do
+describe "Market owner", type: :feature do
 
   before(:each) do
     log_in
@@ -26,6 +26,7 @@ describe "Market owner flow", type: :feature do
     market = create(:market, user: user)
     visit user_path(user)
     expect(page).to have_text("The Market")
+    expect(page).to have_text("email@example.com")
   end
 
 end

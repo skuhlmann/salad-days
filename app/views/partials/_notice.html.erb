@@ -1,8 +1,7 @@
 <% if flash %>
   <% flash.each do |key, message| %>
-    <div class="ink-alert basic" role="alert">
-      <button class="ink-dismiss">&times;</button>
-      <p><b>Guess What?</b><%= message %></p>
+    <div>
+      <p><%= message %></p>
     </div>
   <% end %>
 <% end %>
