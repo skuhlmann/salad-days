@@ -1,6 +1,6 @@
 class Markets::ListingsController < ApplicationController
-
   before_action :set_listing, only: [:edit, :update, :destroy]
+  before_action :require_market_owner
 
   def new
     @listing = current_market.listings.new
@@ -45,4 +45,10 @@ class Markets::ListingsController < ApplicationController
     @listing = current_market.listings.find(params[:id])
   end
 
+  def require_market_owner
+    unless current_user && current_user.id == current_market.user_id
+      flash[:notice] = "Unauthorized"
+      redirect_to root_path
+    end
+  end
 end

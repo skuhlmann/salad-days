@@ -22,4 +22,3 @@
 <% end %>
 <p><%= link_to "Add a Listing", new_market_listing_path(@market.slug) %></p>
 <p><%= link_to "Edit This Market", edit_market_path(@market.slug) %></p> <br />
-<p><%= link_to "Delete This Market", market_path(@market.slug), method: :delete, data: {confirm: "Really delete the market?"} %></p>

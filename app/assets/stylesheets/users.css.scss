@@ -13,6 +13,43 @@
   height: 400px;
 }
 
+#user-market {
+  padding: 5px;
+}
+
+#user-info {
+  padding: 5px;
+  margin-top: -20px;
+}
+
+
+#user-market h3 {
+  font-size: 15px;
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #E8ED76;
+}
+
+#user-market p {
+  line-height: 12px;
+}
+
+#user-info p {
+  line-height: 12px;
+  text-align: right;
+}
+
+#user-market img {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+.edit-link {
+  margin-left: 20%;
+}
+
 #salad-form input {
   border-radius: 6px;
   width: 80%;

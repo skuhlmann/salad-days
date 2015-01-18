@@ -3,8 +3,7 @@ class Market < ActiveRecord::Base
   belongs_to :user
 
   validates :name, :user_id, :email, :street, :city, :state, :zip, presence: true
-  validates :name, uniqueness: true
-  validates :slug, uniqueness: true
+  validates :name, :slug, :email, :user_id, uniqueness: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }
   validates :zip, length: { is: 5, message: "Must be 5 digits long" }

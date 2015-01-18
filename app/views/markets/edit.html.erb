@@ -1,7 +1,4 @@
-<h1>Editing <%= @market.name %></h1>
+<%= render partial: "partials/profile_header", locals: {:user => current_user} %>
 
-<%= render 'form' %>
-
-<ul>
-  <li><%= link_to 'Show', market_path(@market.slug) %></li>
-</ul>
+<p class="medium-content">Editing <%= @market.name %></p>
+  <%= render 'form' %>

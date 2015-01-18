@@ -1,6 +1,6 @@
 <div id="salad-form">
 
-  <%= form_for([:user, @market], html: {multipart: true, class: "ink-form"}) do |f| %>
+  <%= form_for([@market], html: {multipart: true, class: "ink-form"}) do |f| %>
     <% if @market.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@market.errors.count, "error") %> prohibited this market from being saved:</h2>
@@ -12,8 +12,6 @@
         </ul>
       </div>
     <% end %>
-
-
     <div class="column-group">
       <div class="control-group required all-50">
         <%= f.label :name %><br>
@@ -45,11 +43,12 @@
       </div >
       <div class="control-group all-50">
         <%= f.label :image, "Attach an Image" %><br />
-        <%= f.file_field :image %>
+        <%= f.file_field :image, class: "ink-button" %>
       </div>
       <div class="all-10"></div>
       <div class="control-group all-80">
-        <%= f.submit "Add My Market", class: "salad-btn" %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.submit class: "salad-btn" %>
       </div>
       <div class="all-10"></div>
     </div>

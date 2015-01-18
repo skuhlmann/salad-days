@@ -4,19 +4,63 @@
   <% if @user.market.blank? %>
     <div class="all-75">
       <p class="medium-content">You haven't opened a market yet.</p>
-      <p><%= link_to "Create a Market", new_user_market_path(@user.id), class: "listing-btn" %></p>
+      <p><%= link_to "Create a Market", new_market_path(@user.id), class: "listing-btn" %></p>
     </div>
   <% else %>
   <div class="all-75">
-    <p><%= @user.market.name %></p>
-    <p>More market details here</p>
+    <div id="user-market">
+      <div class="column-group">
+        <div class="all-60">
+          <h3><%= @user.market.name.titleize %> <span class="edit-link"><%= link_to "Edit your market", edit_market_path(@user.market.slug), class: "small"  %></span></h3>
+          <p class="small">Email</p>
+          <p class="medium-content"><%= @user.market.email %></p>
+          <p class="small">Address</p>
+          <p class="medium-content"><%= @user.market.full_address %></p>
+          <p class="small">Products</p>
+          <p class="medium-content"><%= @user.market.products %></p>
+        </div>
+        <div class="all-40">
+          <%= image_tag @user.market.image.url %>
+        </div>
+      </div>
+      <% unless @user.market.listings.empty? %>
+        <table class="ink-table alternating">
+        <thead>
+          <tr>
+            <th class="align-left">ID</th>
+            <th class="align-left">Name</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>John</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Will</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Steve</td>
+        </tr>
+        </tbody>
+      </table>
+    <% end %>
+    </div>
   </div>
-  <% end %>
 
-  <div class="all-25 zip">
-    <p class="medium-content">Twitter ID: <%= @user.uid %></p>
-    <p class="medium-content">Location: <%= @user.location %></p>
-    <p class="medium-content">Description: <%= @user.description %></p>
+   <% end %>
+
+  <div class="all-25">
+    <div id="user-info">
+      <p class="small">Twitter Account ID</p>
+      <p class="medium-content"><%= @user.uid %></p>
+      <p class="small">Twitter Account Location</p>
+      <p class="medium-content"><%= @user.location %></p>
+      <p class="small">Twitter Account Description</p>
+      <p class="medium-content"><%= @user.description %></p>
+    </div>
   </div>
 </div>
 
