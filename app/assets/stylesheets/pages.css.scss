@@ -21,6 +21,13 @@ p {
   color: white;
 }
 
+.note{
+  color: red;
+  font-size: 20px;
+  font-weight: 900;
+  font-style: italic;
+}
+
 #footer {
   background-color: #E6F0AF;
   font-size: 15px;
@@ -32,6 +39,7 @@ p {
   padding-top: 75px;
   padding-bottom: 75px;
 }
+
 
 #hero {
   background: image-url("home-bg.jpeg");

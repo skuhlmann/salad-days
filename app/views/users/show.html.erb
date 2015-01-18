@@ -24,28 +24,31 @@
         </div>
       </div>
       <% unless @user.market.listings.empty? %>
-        <table class="ink-table alternating">
-        <thead>
-          <tr>
-            <th class="align-left">ID</th>
-            <th class="align-left">Name</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>1</td>
-          <td>John</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Will</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Steve</td>
-        </tr>
-        </tbody>
-      </table>
+        <div id="listing-grid">
+          <h4>Current Listings</h4>
+          <table class="ink-table">
+            <thead>
+              <tr>
+                <th class="align-left"></th>
+                <th class="align-left">Name</th>
+                <th class="align-left">Description</th>
+                <th class="align-left">Harvest Date</th>
+                <th class="align-left"></th>
+              </tr>
+            </thead>
+            <tbody>
+            <% @user.market.listings.each do |listing| %>
+            <tr>
+              <td><%= image_tag listing.image.url(:thumb) %></td>
+              <td><%= listing.name %></td>
+              <td><%= listing.description %></td>
+              <td><%= listing.harvest_date %></td>
+              <td><%= link_to "Edit listing", edit_market_listing_path(@user.market.slug, listing.id) %></td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
     <% end %>
     </div>
   </div>

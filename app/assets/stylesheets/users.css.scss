@@ -13,6 +13,10 @@
   height: 400px;
 }
 
+.ink-table {
+  margin-bottom: 50px;
+}
+
 #user-market {
   padding: 5px;
 }
@@ -22,9 +26,17 @@
   margin-top: -20px;
 }
 
-
 #user-market h3 {
-  font-size: 15px;
+  font-size: 25px;
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #E8ED76;
+}
+
+#user-market h4 {
+  margin-top: 20px;
+  font-size: 20px;
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
   border-bottom-style: solid;
   border-width: 1px;
@@ -46,8 +58,18 @@
   -webkit-border-radius: 6px;
 }
 
+#user-market a {
+  color: #D7E8D5;
+}
+
+#user-market a:hover {
+  color: #E8ED76;
+}
+
+
 .edit-link {
-  margin-left: 20%;
+  margin-left: 10%;
+  font-size: 12px;
 }
 
 #salad-form input {
