@@ -1,24 +1,68 @@
-<h1><%= @market.name %></h1>
-  <% if @market.image.exists? %>
-    <p><%= image_tag @market.image.url %></p>
-  <% end %>
-<p><%= @market.full_address %></p>
-<p><%= @market.schedule %></p>
-<p><%= @market.products %></p>
-<% if !@market.listings.empty? %>
-  <h3>Listings</h3>
-  <ul>
-  <% @market.listings.each do |listing| %>
-    <li><%= listing.name %></li>
-    <li><%= listing.active %></li>
-    <li><%= listing.harvest_date %></li>
-    <li><% if listing.image.exists? %>
-      <%= image_tag listing.image.url(:thumb) %>
-    <% end %></li>
+<div id="sub-line" class="column-group">
+  <div class="all-100">
+    <p class="market-sub"><%= @market.name.titleize %></p>
+  </div>
+</div>
 
-    <li><%= link_to "Edit Listing", edit_market_listing_path(@market.slug, listing.id) %></li>
+  <a name="market-info"></a>
+  <div class="column-group">
+    <div class="all-25"></div>
+    <div class="all-50">
+      <div class="align-center">
+        <i class="fa fa-leaf"></i>
+          <p class="medium-content"><%= @market.full_address %></p>
+          <p class="medium-content"><%= @market.schedule %></p>
+          <p class="medium-content">Featuring <%= @market.products %></p>
+          <hr>
+      </div>
+    </div>
+    <div class="all-25"></div>
+  </div>
+
+  <div class="column-group">
+    <div class="all-45 market-bg">
+    <% if @market.image.exists? %>
+      <style>
+        .market-bg {
+          background-image: url('<%= @market.image.url(:listing) %>');
+          background-repeat: no-repeat;
+        }
+      </style>
+    <% else %>
+      <%= image_tag @market.image.url %>
+    <% end %>
+    </div>
+    <div class="all-55">
+      <iframe id="map" class="map" frameborder="0" style="border:0" src=<%= "https://www.google.com/maps/embed/v1/place?key=AIzaSyCzueOTNlgqagtZxGARWKl3M28HRnn57Fs&q=#{@market.escape_address}" %>></iframe>
+    </div>
+  </div>
+
+  <hr>
+<% unless @market.listings.empty? %>
+  <div class="column-group">
+    <div class="all-25">
+      <p class="listing-sub">Available Now</p>
+    </div>
+    <div class="all-75"></div>
+  </div>
+
+  <% @market.listings.each do |listing| %>
+  <div class="column-group">
+    <div class="all-5"></div>
+    <div id="listing">
+      <div class="all-25">
+        <h2 class="market-listing"><%= listing.name %></h2>
+        <p class="medium-content">Harvested on: <%= listing.harvest_date %></p>
+        <p class="small-content"><%= listing.description %></p>
+        <p class="medium-content">Contact the market owner about this listing</p>
+        <%= link_to "Email Owner", search_results_path, class: "listing-btn" %>
+      </div>
+      <div class="all-65 righty">
+        <%= image_tag listing.image.url(:listing) %>
+      </div>
+    <div class="all-5"></div>
+    </div>
+  </div>
   <% end %>
-  </ul>
 <% end %>
-<p><%= link_to "Add a Listing", new_market_listing_path(@market.slug) %></p>
-<p><%= link_to "Edit This Market", edit_market_path(@market.slug) %></p> <br />
+

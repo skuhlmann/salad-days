@@ -13,6 +13,7 @@ class Market < ActiveRecord::Base
 
   has_attached_file :image,
     styles: {
+    hero: '600x400#',
     listing: '500x300#',
     thumb: '100x100>',
   }
@@ -26,6 +27,10 @@ class Market < ActiveRecord::Base
   def generate_full_address
     self.full_address = "#{street}, #{city}, #{state}, #{zip}"
     #will break this into a more robust before action when we get api data to check if full address exists
+  end
+
+  def escape_address
+    full_address.gsub(/ +/, "+")
   end
 
 end

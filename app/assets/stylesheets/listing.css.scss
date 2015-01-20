@@ -24,8 +24,45 @@
   border-color: #E8ED76;
 }
 
-.righty{
+.listing-sub {
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  background-color: #E8ED76;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+}
+
+.market-sub {
+  font-family: 'Corben', Georgia, Times, serif;
+  font-size: 50px;
+  color: #4A3A47;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #E8ED76;
+  text-align: center;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+
+hr {
+  border-width: 1px;
+  border-color: #E8ED76;
   text-align: right;
+  margin-bottom: 30px;
+}
+
+.righty {
+  text-align: right;
+}
+
+.market-listing {
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #E8ED76;
 }
 
 .listing-btn {
@@ -47,4 +84,25 @@
   box-shadow: none;
 }
 
+.market-nav {
+  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #E8ED76;
+}
 
+
+.ink-navigation ul.pills li a {
+  color: #4A3A47;
+  background: none;
+}
+
+.ink-navigation ul.pills li a:hover {
+  color: #E8ED76;
+  background: none;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+}
