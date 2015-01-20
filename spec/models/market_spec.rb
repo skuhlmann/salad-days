@@ -141,5 +141,16 @@ RSpec.describe Market, :type => :model do
         market = Market.create(valid_attributes)
         expect(market).to respond_to(:listings)
       end
+
+      it "provides a list of it's active listings" do
+        market = Market.create(valid_attributes)
+        listing = create(:listing, market: market)
+
+        expect(market.listings.active).to eq([listing])
+
+        listing.active = false
+        listing.save
+        expect(market.listings.active).to be_empty
+      end
     end
 end

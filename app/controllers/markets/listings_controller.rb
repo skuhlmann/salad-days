@@ -9,8 +9,8 @@ class Markets::ListingsController < ApplicationController
   def create
     @listing = current_market.listings.new(listing_params)
     if @listing.save
-      flash[:notice] = "Listing was successfully created."
-      redirect_to market_path(current_market.slug)
+      flash[:notice] = "Listing Added"
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -22,8 +22,8 @@ class Markets::ListingsController < ApplicationController
 
   def update
     if @listing.update_attributes(listing_params)
-      flash[:notice] = "Listing was successully created."
-      redirect_to market_path(current_market.slug)
+      flash[:notice] = "Listing Updated"
+      redirect_to user_path(current_user)
     else
       render :edit
     end
