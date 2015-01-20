@@ -75,12 +75,16 @@ describe "Market owner", type: :feature do
     expect(page).to have_text("Turnip")
   end
 
-  xit "can mark a listing as sold or expired" do
+  it "can mark a listing as sold or expired" do
     user = User.last
     market = create(:market, user: user)
     listing = create(:listing, market: market)
 
     visit user_path(user)
+    expect(page).to have_text("A Listing")
+
+    click_link("Sold/Remove")
+    expect(page).not_to have_text("A Listing")
   end
 
   it "can edit and existing listing" do

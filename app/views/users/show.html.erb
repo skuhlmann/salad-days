@@ -37,13 +37,14 @@
               </tr>
             </thead>
             <tbody>
-            <% @user.market.listings.each do |listing| %>
+            <% @user.market.listings.active.each do |listing| %>
             <tr>
               <td><%= image_tag listing.image.url(:thumb) %></td>
               <td><%= listing.name %></td>
               <td><%= listing.description %></td>
               <td><%= listing.harvest_date %></td>
-              <td><%= link_to "Edit listing", edit_market_listing_path(@user.market.slug, listing.id) %></td>
+              <td><%= link_to "Edit listing", edit_market_listing_path(@user.market.slug, listing.id), class: "edit-link" %><br>
+                <%= link_to "Sold/Remove", market_listing_path(@user.market.slug, listing.id, listing: {active: false}), method: "put", class: "edit-link" %></td>
             </tr>
             <% end %>
             </tbody>
@@ -73,8 +74,3 @@
   <div class="spacer">
   </div>
 <% end %>
-
-
-
-
-
