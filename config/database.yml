@@ -15,6 +15,6 @@ test:
 production:
   <<: *default
   database: salad_days_production
-  username: salad_days
+  username: postgres
   password: <%= ENV['SALAD_DAYS_DATABASE_PASSWORD'] %>
 
