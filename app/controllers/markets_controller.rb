@@ -3,6 +3,10 @@ class MarketsController < ApplicationController
   before_action :require_market_owner, only: [:edit, :destroy]
 
   def show
+    if @market.nil?
+      flash[:notice] = "Market doesn't exist"
+      redirect_to root_path
+    end
   end
 
   def new
@@ -31,11 +35,6 @@ class MarketsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    @market.destroy
-    redirect_to root_path
   end
 
   private

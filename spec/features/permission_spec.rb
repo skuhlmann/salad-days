@@ -10,7 +10,7 @@ describe "Permissions", type: :feature do
     expect(page).to have_text("Unauthorized")
   end
 
-  it "cannot manage someone else's market" do
+   it "cannot manage someone else's market" do
     other_user = create(:user)
     market = create(:market, user_id: other_user.id)
     log_in
