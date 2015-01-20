@@ -29,12 +29,6 @@ class Markets::ListingsController < ApplicationController
     end
   end
 
-  def destroy
-    @listing.destroy
-    flash[:notice] = "#{@listing.name} was deleted."
-    redirect_to market_path(current_market.slug)
-  end
-
   private
 
   def listing_params
