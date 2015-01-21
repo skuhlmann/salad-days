@@ -55,7 +55,7 @@
         <p class="medium-content">Harvested on: <%= listing.harvest_date %></p>
         <p class="small-content"><%= listing.description %></p>
         <p class="medium-content">Contact the market owner about this listing</p>
-        <%= link_to "Email Owner", search_results_path, class: "listing-btn" %>
+        <%= link_to "Email Owner", markets_path, class: "listing-btn" %>
       </div>
       <div class="all-65 righty">
         <%= image_tag listing.image.url(:listing) %>

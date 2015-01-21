@@ -5,6 +5,8 @@ describe "Unauthenticated user", type: :feature do
   it "can browse market listing by zip code" do
     market = create(:market, user_id: 1)
     listing = create(:listing, market_id: market.id)
+    market.save
+    listing.save
 
     visit root_path
     fill_in("zip", with: "80205")
@@ -18,17 +20,49 @@ describe "Unauthenticated user", type: :feature do
     expect(page).to have_text(market.name)
   end
 
-  it "can narrow the listings on the markets page by zip code" do
+  it "is promted to search another zip code when no results are found" do
+    market = create(:market, user_id: 1)
+    listing = create(:listing, market_id: market.id)
+    market.save
+    listing.save
+
+    visit root_path
+    fill_in("zip", with: "90210")
+    click_button("Search")
+
+    expect(page).to have_text("No results found for the zipcode: 90210. Please try another zip code.")
+  end
+
+  it "is prompted to narrow the listings on the markets page by zip code" do
     market = create(:market, user_id: 1)
     listing = create(:listing, market_id: market.id)
     another_market = Market.create(name: "Another Market", email: "two@example.com", street: "6000 Vine", city: "LA", state: "CA", zip: "90028", user_id: 2)
-    listing = create(:listing, market_id: another_market.id)
+    another_listing = create(:listing, market_id: another_market.id)
 
     visit markets_path
 
     expect(page).to have_text("The Market")
     expect(page).to have_text("Another Market")
     expect(page).to have_text("Enter a zipcode to narrow your search")
+  end
+
+  it "can narrow the listings on the markets page by zip code" do
+    market = create(:market, user_id: 1)
+    listing = create(:listing, market_id: market.id)
+    another_market = Market.create(name: "Another Market", email: "two@example.com", street: "6000 Vine", city: "LA", state: "CA", zip: "90028", user_id: 2)
+    another_listing = create(:listing, market_id: another_market.id)
+    market.save
+    another_market.save
+    listing.save
+    another_listing.save
+
+    visit markets_path
+    fill_in("zip", with: "80205")
+    click_button("Search")
+
+    expect(page).to have_text("The Market")
+    expect(page).not_to have_text("Another Market")
+
   end
 
   it "can visit a market detail page" do
