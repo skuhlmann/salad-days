@@ -14,13 +14,10 @@
           <h2>Lust for Leaf</h2>
           <form class="ink-form search-form">
             <div class="control-group">
-              <label for="zipcode">Find Local Food</label>
               <div class="control">
-                <%= form_tag markets_path, method: :get do %>
-                  <%= label_tag :zip  %>
-                  <%= text_field_tag :zip, params[:zip] %>
-                  <%= submit_tag "Search" %>
-                <% end %>
+                <%= render partial: "partials/search_form" %>
+
+                <hr>
 
                 <form accept-charset="UTF-8" action="/markets" method="get">
                   <input name="utf8" type="hidden" value="&#x2713;" />
