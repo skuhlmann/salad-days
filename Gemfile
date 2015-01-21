@@ -20,6 +20,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'geocoder'
+gem 'faraday'
 
 gem 'spring',        group: :development
 

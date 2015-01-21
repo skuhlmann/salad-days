@@ -6,7 +6,6 @@ class MarketsController < ApplicationController
   def index
     if params[:zip].present?
       @markets = Market.near(params[:zip], 50)
-      flash[:notice] = nil
     else
       @markets = Market.all
       flash[:notice] = "Enter a zipcode to narrow your search"
