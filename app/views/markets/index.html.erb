@@ -6,7 +6,13 @@
     <% if successful_search? %>
       <h5>Results for <%= params[:zip] %></h5>
     <% else %>
-      <%= render partial: "partials/search_form" %>
+      <div id="page-form" class="ink-form">
+        <div class="control-group">
+          <div class="control">
+            <%= render partial: "partials/search_form" %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

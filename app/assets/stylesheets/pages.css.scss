@@ -108,6 +108,41 @@ a:hover {
   box-shadow: none;
 }
 
+#page-form {
+  font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: normal;
+  color: #4A3A47;
+  text-align: center;
+  background: rgba(0,0,0,0);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: none;
+  text-align: center;
+}
+
+#page-form .search-btn {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  padding: 8px 15px;
+  font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: normal;
+  color: #4A3A47;
+  border: 2px solid #4A3A47;
+  text-align: center;
+  background: rgba(0,0,0,0);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: none;
+}
+
+
 .ink-form textarea {
   border-radius: 6px;
   width: 80%;
