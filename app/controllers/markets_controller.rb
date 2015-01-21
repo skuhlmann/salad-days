@@ -1,6 +1,17 @@
 class MarketsController < ApplicationController
   before_action :set_market, only: [:show, :edit, :destory]
   before_action :require_market_owner, only: [:edit, :destroy]
+  helper_method :successful_search?, :empty_search?
+
+  def index
+    if params[:zip].present?
+      @markets = Market.near(params[:zip], 50)
+      flash[:notice] = nil
+    else
+      @markets = Market.all
+      flash[:notice] = "Enter a zipcode to narrow your search"
+    end
+  end
 
   def show
     if @market.nil?
@@ -52,5 +63,13 @@ class MarketsController < ApplicationController
       flash[:notice] = "Unauthorized"
       redirect_to root_path
     end
+  end
+
+  def successful_search?
+    params[:zip].present? && @markets.any?
+  end
+
+  def empty_search?
+    params[:zip] && @markets.empty?
   end
 end
