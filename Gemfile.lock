@@ -68,6 +68,7 @@ GEM
       i18n (~> 0.5)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
+    geocoder (1.2.6)
     hashie (3.3.1)
     hike (1.2.3)
     i18n (0.7.0)
@@ -208,6 +209,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-rails
+  geocoder
   ink3-rails
   jbuilder (~> 2.0)
   jquery-rails
