@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get "/search_results", to: "pages#search_results"
-
   resources :markets, only: [:index]
 
   resources :markets, path: "markets", param: :slug, only: [:show, :edit, :update, :new, :create] do

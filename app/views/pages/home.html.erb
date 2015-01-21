@@ -12,23 +12,13 @@
           <hgroup>
           <h3>Fullfill Your</h3>
           <h2>Lust for Leaf</h2>
-          <form class="ink-form search-form">
+          <div class="ink-form search-form">
             <div class="control-group">
               <div class="control">
                 <%= render partial: "partials/search_form" %>
-
-                <hr>
-
-                <form accept-charset="UTF-8" action="/markets" method="get">
-                  <input name="utf8" type="hidden" value="&#x2713;" />
-                  <label for="zip">Search for:</label>
-                  <input id="zip" name="zip" type="text" />
-                  <input name="commit" type="submit" value="Search" />
-                </form>
-
               </div>
             </div>
-          </form>
+          </div>
           </hgroup>
         </div>
       </div>
