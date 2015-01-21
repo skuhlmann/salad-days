@@ -1,0 +1,6 @@
+<%= form_tag markets_path, method: :get do %>
+  <%= label_tag :zip %>
+  <%= text_field_tag :zip, params[:zip] %>
+  <%= submit_tag %>
+<% end %>
+

@@ -14,10 +14,18 @@
           <h2>Lust for Leaf</h2>
           <form class="ink-form search-form">
             <div class="control-group">
-              <label for="zipcode">Find Local Food</label>
               <div class="control">
-                <input id="zipcode" name="zipcode" type="text" placeholder="Zipcode" class="center-input">
-                <%= link_to "Search", search_results_path, class: "search-btn" %>
+                <%= render partial: "partials/search_form" %>
+
+                <hr>
+
+                <form accept-charset="UTF-8" action="/markets" method="get">
+                  <input name="utf8" type="hidden" value="&#x2713;" />
+                  <label for="zip">Search for:</label>
+                  <input id="zip" name="zip" type="text" />
+                  <input name="commit" type="submit" value="Search" />
+                </form>
+
               </div>
             </div>
           </form>

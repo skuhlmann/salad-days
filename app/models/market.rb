@@ -11,13 +11,15 @@ class Market < ActiveRecord::Base
 
   before_save :generate_slug, :generate_full_address
 
+  geocoded_by :full_address
+  after_validation :geocode
+
   has_attached_file :image,
     styles: {
     hero: '600x400#',
     listing: '500x300#',
     thumb: '100x100>',
   }
-
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
   def generate_slug

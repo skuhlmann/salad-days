@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   end
 
   def search_results
-    @results = Listing.all
-    @markets = Market.all
+    @results = Market.near(params[:search], 50, order: :distance)
+    render :search_results
   end
+
 end
