@@ -27,7 +27,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -79,11 +79,10 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :user_name            => ENV['GMAIL_USERNAME'],
-    :password             => ENV['GMAIL_PASSWORD'],
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    :address              => "smtp.mandrillapp.com",
+    :port                 => "587",
+    :user_name            => ENV['MANDRILL_USERNAME'],
+    :password             => ENV['MANDRILL_APIKEY'],
+    :authentication       => :plain
   }
 end
