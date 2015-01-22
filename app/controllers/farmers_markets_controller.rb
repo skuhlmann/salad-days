@@ -5,10 +5,6 @@ class FarmersMarketsController < ApplicationController
     @markets = FarmersMarket.find_all_by(params[:zip])
   end
 
-  def show
-    @market = FarmersMarket.find(id)
-  end
-
   private
 
   def escape_address(address)

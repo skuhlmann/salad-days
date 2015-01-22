@@ -13,5 +13,6 @@ describe "Farmers market listing user", type: :feature do
     expect(page).to have_text("1001 Osage Street, Denver, Colorado, 80204")
     expect(page).to have_text("05/03/2014 to 10/25/2014 Wed: 9:00 AM-1:00 PM;Sat: 8:00 AM-1:00 PM")
   end
+
 end
 

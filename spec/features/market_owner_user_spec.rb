@@ -6,7 +6,7 @@ describe "Market owner", type: :feature do
     log_in
   end
 
-  it "market owner can create thier market" do
+  it "market owner can create their market" do
     click_link("Create a Market")
     fill_in("market_name", with: "Trevor's Yard")
     fill_in("market_email", with: "trev@example.com")
@@ -21,7 +21,7 @@ describe "Market owner", type: :feature do
     expect(page).to have_text("80202")
   end
 
-  it "can see thier existing market options from thier profile page" do
+  it "can see thier existing market options from their profile page" do
     user = User.last
     market = create(:market, user: user)
 
@@ -31,7 +31,7 @@ describe "Market owner", type: :feature do
     expect(page).to have_text("email@example.com")
   end
 
-  it "can see view listing for thier market" do
+  it "can see view listing for their market" do
     user = User.last
     market = create(:market, user: user)
     listing = create(:listing, market: market)
@@ -44,7 +44,7 @@ describe "Market owner", type: :feature do
     expect(page).to have_text(listing.harvest_date)
   end
 
-  it "can can edit thier market" do
+  it "can can edit their market" do
     user = User.last
     market = create(:market, user: user)
 

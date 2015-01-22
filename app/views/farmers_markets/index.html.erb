@@ -29,9 +29,8 @@
           <h3><%= clean_name(market.marketname) %></h3>
           <p class="small-content">Distance from <%= params[:zip] %>: <%= distance_from(market.marketname) %> miles</p>
           <p class="medium-content"><%= market.Address %></p>
-          <p class="small-content"><%= market.Schedule %></p>
-          <p class="small-content">Checkout the market page for more details.</p>
-          <p><%= link_to "View Market Details", root_path, class: "listing-btn" %></p>
+          <p class="small-content"><%= "Schedule: #{market.Schedule}" if market.Schedule.presence %></p>
+          <p class="small-content"><%= "Featuring: #{market.Products}" if market.Products.presence %></p>
         </div>
       </div>
       <div class="all-70 align-right">
