@@ -14,6 +14,7 @@
  *= require ink-flex
  *= require font-awesome
  *= require jquery.sidr.light
+ *= require pace/pace-theme-center-simple
  *= require_tree .
  *= require_self
  */

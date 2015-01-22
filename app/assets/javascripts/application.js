@@ -16,4 +16,5 @@
 //= require ink-all
 //= require autoload
 //= require html5shiv
+//= require pace/pace
 //= require_tree .

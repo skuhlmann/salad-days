@@ -17,6 +17,17 @@ p {
   color: white;
 }
 
+.pace {
+  border: 1px solid #E6F0AF;
+  height: 20px;
+  width: 300px;
+}
+
+.pace .pace-progress {
+  background: #E6F0AF;
+  max-width: 300px;
+}
+
 .white {
   color: white;
 }
