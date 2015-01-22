@@ -39,30 +39,8 @@
 
   <hr>
 <% unless @market.listings.empty? %>
-  <div class="column-group">
-    <div class="all-25">
-      <p class="listing-sub">Available Now</p>
-    </div>
-    <div class="all-75"></div>
-  </div>
 
-  <% @market.listings.each do |listing| %>
-  <div class="column-group">
-    <div class="all-5"></div>
-    <div id="listing">
-      <div class="all-25">
-        <h2 class="market-listing"><%= listing.name %></h2>
-        <p class="medium-content">Harvested on: <%= listing.harvest_date %></p>
-        <p class="small-content"><%= listing.description %></p>
-        <p class="medium-content">Contact the market owner about this listing</p>
-        <%= link_to "Email Owner", markets_path, class: "listing-btn" %>
-      </div>
-      <div class="all-65 righty">
-        <%= image_tag listing.image.url(:listing) %>
-      </div>
-    <div class="all-5"></div>
-    </div>
-  </div>
-  <% end %>
+  <%= render partial: "partials/market_listings", locals: {market: @market} %>
+
 <% end %>
 

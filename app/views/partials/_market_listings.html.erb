@@ -1,0 +1,36 @@
+<div class="column-group">
+  <div class="all-25">
+    <p class="listing-sub">Available Now</p>
+  </div>
+  <div class="all-75"></div>
+</div>
+
+<% market.listings.each do |listing| %>
+  <div class="column-group">
+    <div class="all-5"></div>
+    <div id="listing">
+      <div class="all-25">
+        <h2 class="market-listing"><%= listing.name %></h2>
+        <p class="medium-content">Harvested on: <%= listing.harvest_date %></p>
+        <p class="small-content"><%= listing.description %></p>
+        <p class="medium-content align-center">Interested in making a deal for this listing?</p>
+        <div id="page-form" class="ink-form">
+          <div class="control-group">
+            <div class="control">
+              <%= form_tag contact_path, method: :get do %>
+                <%= hidden_field_tag :listing_id, listing.id %>
+                <%= text_field_tag :contact_email, params[:contact_email], placeholder: "Email", class: "center-input" %>
+                <%= submit_tag "Contact Market Owner", class: "search-btn" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="all-65 righty">
+        <%= image_tag listing.image.url(:listing) %>
+      </div>
+      <div class="all-5"></div>
+    </div>
+  </div>
+<% end %>
+

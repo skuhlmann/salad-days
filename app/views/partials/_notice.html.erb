@@ -1,8 +1,8 @@
 <% if flash %>
-  <% flash.each do |key, message| %>
   <div class="note align-right">
-    <p id="flash-notice"><%= message %></p>
-  </div>
+  <% flash.each do |key, message| %>
+    <%= message %>
   <% end %>
+  </div>
 <% end %>
 <% flash[:error] = flash[:errors] = flash[:notice] = nil %>

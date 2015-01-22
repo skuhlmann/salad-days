@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  get "/contact", to: "markets/listings#contact"
+
   get "/auth/twitter/callback", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 end
