@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @listing.market.user.name %></h1>
+    <p>You have a listing inquiry from <%= @contact_email %></p>
+    <ul>Listing
+      <li>Item: <%= @listing.name %></li>
+      <li>Description: <%= @listing.description %></li>
+      <li>Harvest Date:<%= @listing.harvest_date %></li>
+    </ul>
+    <%= image_tag @listing.image.url(:listing) %>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 class Markets::ListingsController < ApplicationController
   before_action :set_listing, only: [:edit, :update, :destroy]
-  before_action :require_market_owner
+  before_action :require_market_owner, except: [:contact]
 
   def new
     @listing = current_market.listings.new
@@ -27,6 +27,13 @@ class Markets::ListingsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def contact
+    @listing = Listing.find(params[:listing_id])
+    MarketMailer.contact_email(@listing, params[:contact_email]).deliver
+    flash[:notice] = "Your email was delivered, expect to hear from the market owner shortly"
+    redirect_to market_path(@listing.market.slug)
   end
 
   private
