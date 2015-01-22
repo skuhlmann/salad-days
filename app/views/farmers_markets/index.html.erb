@@ -26,7 +26,8 @@
     <div id="listing" class="farmers">
       <div class="all-30">
         <div id="farmers-details">
-          <h3><%= market.marketname %></h3>
+          <h3><%= clean_name(market.marketname) %></h3>
+          <p class="small-content">Distance from <%= params[:zip] %>: <%= distance_from(market.marketname) %> miles</p>
           <p class="medium-content"><%= market.Address %></p>
           <p class="small-content"><%= market.Schedule %></p>
           <p class="small-content">Checkout the market page for more details.</p>
