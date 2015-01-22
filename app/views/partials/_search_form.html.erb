@@ -1,4 +1,4 @@
-<%= form_tag markets_path, method: :get do %>
+<%= form_tag farmers_markets_path, method: :get do %>
   <%= label_tag :zip, "Find Local Food" %><br>
   <%= text_field_tag :zip, params[:zip], placeholder: "Zip Code", class: "center-input" %><br>
   <%= submit_tag "Search", class: "search-btn" %>
