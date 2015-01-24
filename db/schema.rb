@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121021748) do
+ActiveRecord::Schema.define(version: 20150123214531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "listings", force: true do |t|
-    t.string   "name"
+    t.string   "name",                              null: false
     t.string   "description"
-    t.date     "harvest_date"
+    t.date     "harvest_date",                      null: false
     t.boolean  "active",             default: true
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "market_id"
+    t.integer  "market_id",                         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150121021748) do
   add_index "listings", ["market_id"], name: "index_listings_on_market_id", using: :btree
 
   create_table "markets", force: true do |t|
-    t.string   "name"
+    t.string   "name",               null: false
     t.string   "google_link"
     t.string   "full_address"
     t.string   "schedule"
@@ -44,12 +44,12 @@ ActiveRecord::Schema.define(version: 20150121021748) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "zip"
+    t.string   "zip",                null: false
     t.string   "slug"
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "user_id"
+    t.string   "street",             null: false
+    t.string   "city",               null: false
+    t.string   "state",              null: false
+    t.integer  "user_id",            null: false
     t.string   "email"
     t.float    "latitude"
     t.float    "longitude"
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 20150121021748) do
   add_index "markets", ["user_id"], name: "index_markets_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
+    t.string   "provider",    null: false
+    t.string   "uid",         null: false
+    t.string   "name",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"

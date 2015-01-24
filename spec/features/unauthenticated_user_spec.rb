@@ -14,6 +14,11 @@ describe "Unauthenticated user", type: :feature do
 
     expect(page).to have_text(market.name)
     expect(page).to have_text(listing.name)
+    expect(page).to have_text("Tiri's Garden Farmers")
+    expect(page).to have_text("City Park Esplanade Fresh Market")
+    expect(page).to have_text("Stapleton Farmers Market")
+    expect(page).to have_text("1001 Osage Street, Denver, Colorado, 80204")
+    expect(page).to have_text("05/03/2014 to 10/25/2014 Wed: 9:00 AM-1:00 PM;Sat: 8:00 AM-1:00 PM")
 
     click_link("View Market Details")
     expect(current_path).to eq(market_path(market.slug))
@@ -27,10 +32,10 @@ describe "Unauthenticated user", type: :feature do
     listing.save
 
     visit root_path
-    fill_in("zip", with: "90210")
+    fill_in("zip", with: "99762")
     click_button("Search")
 
-    expect(page).to have_text("No results found for the zipcode: 90210. Please try another zip code.")
+    expect(page).to have_text("No results found for the zipcode: 99762. Please try another zip code.")
   end
 
   it "is prompted to narrow the listings on the markets page by zip code" do
