@@ -1,12 +1,14 @@
-class FarmersMarket
+class FarmersMarket < ActiveRecord::Base
 
   def self.service
     @service ||= MarketService.new
   end
 
   def self.find_all_by(zip)
-    service.farmers_markets(zip)["results"].map do |market_overview|
-     _add_attribute_details( _build_object(market_overview))
+    Rails.cache.fetch("#{zip}/farmers_markets", expires_in: 48.hours) do
+      service.farmers_markets(zip)["results"].map do |market_overview|
+        _add_attribute_details( _build_object(market_overview))
+      end
     end
   end
 
