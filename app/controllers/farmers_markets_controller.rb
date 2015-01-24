@@ -2,7 +2,13 @@ class FarmersMarketsController < ApplicationController
   helper_method :escape_address, :clean_name, :distance_from
 
   def index
-    @markets = FarmersMarket.find_all_by(params[:zip])
+    if params[:zip].present?
+      @markets = FarmersMarket.find_all_by(params[:zip])
+      @user_markets = Market.near(params[:zip], 50)
+    else
+      @user_markets = Market.all
+      flash[:notice] = "Enter a zipcode to narrow your search"
+    end
   end
 
   private
