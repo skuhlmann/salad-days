@@ -79,6 +79,10 @@ class Seed
       image: File.new("#{Rails.root}/app/assets/images/market-6.jpeg")
       )
 
+    markets = Market.all.each do |market|
+      market.geocode
+      market.save
+    end
     puts "markets generated"
   end
 
