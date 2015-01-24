@@ -4,7 +4,7 @@
   </div>
   <div class="all-25 zip">
     <% if successful_search? %>
-      <h5>Results for <%= params[:zip] %></h5>
+      <h5><%= markets.count %> results for <%= params[:zip] %></h5>
     <% else %>
       <div id="page-form" class="ink-form">
         <div class="control-group">
