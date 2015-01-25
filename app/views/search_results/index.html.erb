@@ -5,37 +5,37 @@
 <% end %>
 
 <% @markets.each do |market| %>
-  <% if farmers_market?(market.last) %>
+  <% if farmers_market?(market) %>
   <div class="column-group">
     <div id="listing" class="farmers">
       <div class="all-30">
         <div id="farmers-details">
-          <h3><%= clean_name(market.last.marketname) %></h3>
-          <p class="small-content">Distance from <%= params[:zip] %>: <%= market.first %> miles</p>
-          <p class="medium-content"><%= market.last.Address %></p>
-          <p class="small-content"><%= "Schedule: #{market.last.Schedule}" if market.last.Schedule.presence %></p>
-          <p class="small-content"><%= "Featuring: #{market.last.Products}" if market.last.Products.presence %></p>
+          <h3><%= clean_name(market.marketname) %></h3>
+          <p class="small-content">Distance from <%= params[:zip] %>: <%= market.distance %> miles</p>
+          <p class="medium-content"><%= market.Address %></p>
+          <p class="small-content"><%= "Schedule: #{market.Schedule}" if market.Schedule.presence %></p>
+          <p class="small-content"><%= "Featuring: #{market.Products}" if market.Products.presence %></p>
         </div>
       </div>
       <div class="all-70 align-right">
         <div id="farmers-map">
-          <iframe id="map" class="farmers-map" frameborder="0" style="border:0" src=<%= "https://www.google.com/maps/embed/v1/place?key=AIzaSyCzueOTNlgqagtZxGARWKl3M28HRnn57Fs&q=#{escape_address(market.last.Address)}" %>></iframe>
+          <iframe id="map" class="farmers-map" frameborder="0" style="border:0" src=<%= "https://www.google.com/maps/embed/v1/place?key=AIzaSyCzueOTNlgqagtZxGARWKl3M28HRnn57Fs&q=#{escape_address(market.Address)}" %>></iframe>
         </div>
       </div>
     </div>
   </div>
 
-  <% else %>
-    <% market.last.listings.each do |listing| %>
+  <% elsif !market.listings.empty? %>
+    <% market.listings.each do |listing| %>
       <div class="column-group">
         <div id="listing">
           <div class="all-30">
-            <h3><%= market.last.name %></h3>
+            <h3><%= market.name %></h3>
             <h2><%= listing.name %></h2>
-            <p class="small-content">Distance from <%= params[:zip] %>: <%= market.first %> miles</p>
+            <p class="small-content">Distance from <%= params[:zip] %>: <%= market.distance.round(1) %> miles</p>
             <p class="medium-content"><%= listing.description %></p>
             <p class="small-content">Checkout the market page for location information, more details and to contact the gardener.</p>
-            <p><%= link_to "View Market Details", market_path(market.last.slug), class: "listing-btn" %></p>
+            <p><%= link_to "View Market Details", market_path(market.slug), class: "listing-btn" %></p>
           </div>
           <div class="all-60 righty">
             <%= image_tag listing.image.url(:listing) %>
