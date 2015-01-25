@@ -38,17 +38,10 @@ describe "Unauthenticated user", type: :feature do
     expect(page).to have_text("No results found for the zipcode: 99762. Please try another zip code.")
   end
 
-  it "is prompted to narrow the listings on the markets page by zip code" do
-    market = create(:market, user_id: 1)
-    listing = create(:listing, market_id: market.id)
-    another_market = Market.create(name: "Another Market", email: "two@example.com", street: "6000 Vine", city: "LA", state: "CA", zip: "90028", user_id: 2)
-    another_listing = create(:listing, market_id: another_market.id)
+  it "is prompted to enter a zip on the search page" do
+    visit search_results_path
 
-    visit markets_path
-
-    expect(page).to have_text("The Market")
-    expect(page).to have_text("Another Market")
-    expect(page).to have_text("Enter a zipcode to narrow your search")
+    expect(page).to have_text("Enter a zipcode to find markets in your area")
   end
 
   it "can narrow the listings on the markets page by zip code" do
@@ -61,7 +54,7 @@ describe "Unauthenticated user", type: :feature do
     listing.save
     another_listing.save
 
-    visit markets_path
+    visit search_results_path
     fill_in("zip", with: "80205")
     click_button("Search")
 
