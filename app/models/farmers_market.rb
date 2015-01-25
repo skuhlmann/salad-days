@@ -22,6 +22,7 @@ class FarmersMarket < ActiveRecord::Base
     markets = service.farmers_market(market.id)["marketdetails"]
     markets.each_with_object(market) do |(key, value), market_overview |
       market_overview[key] = value
+      market_overview["distance"] = market.marketname.split(" ")[0].to_f
     end
   end
 end
