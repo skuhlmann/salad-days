@@ -4,20 +4,23 @@
   </div>
 </div>
 
-  <a name="market-info"></a>
-  <div class="column-group">
-    <div class="all-25"></div>
-    <div class="all-50">
-      <div class="align-center">
+<div class="column-group">
+  <div class="all-25"></div>
+  <div class="all-50">
+    <div class="align-center">
+      <div class="flagger">
         <i class="fa fa-leaf"></i>
-          <p class="medium-content"><%= @market.full_address %></p>
-          <p class="medium-content"><%= @market.schedule %></p>
-          <p class="medium-content">Featuring <%= @market.products %></p>
-          <hr>
+        <%= link_to "Flag It", market_path(@market.slug) %>
+        <i class="fa fa-leaf"></i>
       </div>
+      <p class="medium-content"><%= @market.full_address %></p>
+      <p class="medium-content"><%= @market.schedule %></p>
+      <p class="medium-content">Featuring <%= @market.products %></p>
+      <hr>
     </div>
-    <div class="all-25"></div>
   </div>
+  <div class="all-25"></div>
+</div>
 
   <div class="column-group">
     <div class="all-45 market-bg">

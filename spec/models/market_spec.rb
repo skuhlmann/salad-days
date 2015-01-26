@@ -152,5 +152,10 @@ RSpec.describe Market, :type => :model do
         listing.save
         expect(market.listings.active).to be_empty
       end
+
+      it "has many flags" do
+        market = Market.create(valid_attributes)
+        expect(market).to respond_to(:flags)
+      end
     end
 end

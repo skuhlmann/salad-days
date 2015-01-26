@@ -7,6 +7,7 @@ class MarketsController < ApplicationController
       flash[:notice] = "Market doesn't exist"
       redirect_to root_path
     end
+    set_flag
   end
 
   def new
@@ -52,5 +53,10 @@ class MarketsController < ApplicationController
       flash[:notice] = "Unauthorized"
       redirect_to root_path
     end
+  end
+
+  def set_flag
+
+
   end
 end

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates :name, :uid, :provider, presence: true
   validates :uid, uniqueness: true
   has_one :market
+  has_many :flags
 
   def self.create_with_omniauth(auth)
     create! do |user|

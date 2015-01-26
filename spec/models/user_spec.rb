@@ -52,6 +52,11 @@ RSpec.describe User, :type => :model do
         user = User.create(valid_attributes)
         expect(user).to respond_to(:market)
       end
+
+      it "has many flags" do
+        user = User.create(valid_attributes)
+        expect(user).to respond_to(:flags)
+      end
     end
 
     describe "omniauth creation" do
