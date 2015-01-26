@@ -11,10 +11,18 @@
       <div class="flagger">
         <i class="fa fa-leaf"></i>
         <% unless current_user.nil? %>
-          <%= form_tag flag_path do %>
-            <%= hidden_field_tag :market_id, @market.id %>
-            <%= hidden_field_tag :user_id, current_user.id %>
-            <%= submit_tag "Flag It", class: "listing-btn" %>
+          <% if is_flagged? %>
+            <%= form_tag flag_path, method: "delete" do %>
+              <%= hidden_field_tag :market_id, @market.id %>
+              <%= hidden_field_tag :user_id, current_user.id %>
+              <%= submit_tag "Unflag It", class: "listing-btn" %>
+            <% end %>
+          <% else %>
+            <%= form_tag flag_path do %>
+              <%= hidden_field_tag :market_id, @market.id %>
+              <%= hidden_field_tag :user_id, current_user.id %>
+              <%= submit_tag "Flag It", class: "listing-btn" %>
+            <% end %>
           <% end %>
         <% end %>
         <i class="fa fa-leaf"></i>

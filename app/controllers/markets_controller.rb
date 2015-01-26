@@ -42,7 +42,16 @@ class MarketsController < ApplicationController
    @market = Market.find(params[:market_id])
    if @market.flags.create(user_id: current_user.id)
      flash[:notice] = "You've flagged #{@market.name}"
-    redirect_to market_path(@market.slug)
+     redirect_to market_path(@market.slug)
+   end
+  end
+
+  def unflag
+   @market = Market.find(params[:market_id])
+   @flag = Flag.find_by(market_id: params[:market_id], user_id: current_user.id)
+   if @flag.destroy
+     flash[:notice] = "You've unflagged #{@market.name}"
+     redirect_to market_path(@market.slug)
    end
   end
 

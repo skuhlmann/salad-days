@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   post "/flag", to: "markets#flag"
+  delete "/flag", to: "markets#unflag"
 
   resources :users, only: [:show]
 
