@@ -1,6 +1,7 @@
 class MarketsController < ApplicationController
-  before_action :set_market, only: [:show, :edit, :destory]
+  before_action :set_market, only: [:show, :edit, :destory, :flag]
   before_action :require_market_owner, only: [:edit, :destroy]
+  helper_method :is_flagged?
 
   def show
     if @market.nil?
@@ -37,6 +38,23 @@ class MarketsController < ApplicationController
     end
   end
 
+  def flag
+   @market = Market.find(params[:market_id])
+   if @market.flags.create(user_id: current_user.id)
+     flash[:notice] = "You've flagged #{@market.name}"
+     redirect_to market_path(@market.slug)
+   end
+  end
+
+  def unflag
+   @market = Market.find(params[:market_id])
+   @flag = Flag.find_by(market_id: params[:market_id], user_id: current_user.id)
+   if @flag.destroy
+     flash[:notice] = "You've unflagged #{@market.name}"
+     redirect_to market_path(@market.slug)
+   end
+  end
+
   private
 
   def market_params
@@ -52,5 +70,9 @@ class MarketsController < ApplicationController
       flash[:notice] = "Unauthorized"
       redirect_to root_path
     end
+  end
+
+  def is_flagged?
+    current_user && current_user.flags.any? {|flag| flag.market_id == @market.id}
   end
 end

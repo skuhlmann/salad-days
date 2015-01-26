@@ -4,20 +4,37 @@
   </div>
 </div>
 
-  <a name="market-info"></a>
-  <div class="column-group">
-    <div class="all-25"></div>
-    <div class="all-50">
-      <div class="align-center">
+<div class="column-group">
+  <div class="all-25"></div>
+  <div class="all-50">
+    <div class="align-center">
+      <div class="flagger">
         <i class="fa fa-leaf"></i>
-          <p class="medium-content"><%= @market.full_address %></p>
-          <p class="medium-content"><%= @market.schedule %></p>
-          <p class="medium-content">Featuring <%= @market.products %></p>
-          <hr>
+        <% unless current_user.nil? %>
+          <% if is_flagged? %>
+            <%= form_tag flag_path, method: "delete" do %>
+              <%= hidden_field_tag :market_id, @market.id %>
+              <%= hidden_field_tag :user_id, current_user.id %>
+              <%= submit_tag "Unflag It", class: "listing-btn" %>
+            <% end %>
+          <% else %>
+            <%= form_tag flag_path do %>
+              <%= hidden_field_tag :market_id, @market.id %>
+              <%= hidden_field_tag :user_id, current_user.id %>
+              <%= submit_tag "Flag It", class: "listing-btn" %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <i class="fa fa-leaf"></i>
       </div>
+      <p class="medium-content"><%= @market.full_address %></p>
+      <p class="medium-content"><%= @market.schedule %></p>
+      <p class="medium-content">Featuring <%= @market.products %></p>
+      <hr>
     </div>
-    <div class="all-25"></div>
   </div>
+  <div class="all-25"></div>
+</div>
 
   <div class="column-group">
     <div class="all-45 market-bg">

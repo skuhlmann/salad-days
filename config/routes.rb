@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :listings, controller: "markets/listings", except: [:show, :index, :destroy]
   end
 
+  post "/flag", to: "markets#flag"
+  delete "/flag", to: "markets#unflag"
+
   resources :users, only: [:show]
 
   get "/contact", to: "markets/listings#contact"

@@ -7,10 +7,10 @@
       <p><%= link_to "Create a Market", new_market_path(@user.id), class: "listing-btn" %></p>
     </div>
   <% else %>
-  <div class="all-75">
+  <div class="all-60">
     <div id="user-market">
       <div class="column-group">
-        <div class="all-60">
+        <div class="all-70">
           <h3><%= @user.market.name.titleize %> <span class="edit-link"><%= link_to "Edit your market", edit_market_path(@user.market.slug), class: "small"  %></span></h3>
           <p class="small">Email</p>
           <p class="medium-content"><%= @user.market.email %></p>
@@ -19,7 +19,7 @@
           <p class="small">Products</p>
           <p class="medium-content"><%= @user.market.products %></p>
         </div>
-        <div class="all-40">
+        <div class="all-30">
           <%= image_tag @user.market.image.url %>
         </div>
       </div>
@@ -58,7 +58,7 @@
 
    <% end %>
 
-  <div class="all-25">
+  <div class="all-40">
     <div id="user-info">
       <p class="small">Twitter Account ID</p>
       <p class="medium-content"><%= @user.uid %></p>
@@ -67,6 +67,25 @@
       <p class="small">Twitter Account Description</p>
       <p class="medium-content"><%= @user.description %></p>
     </div>
+
+    <% unless @user.flagged_markets.empty? %>
+      <div>
+        <h4>Flagged market activity</h5>
+        <% @user.flagged_markets.each do |market| %>
+          <p class="small"><%= market.name %></p>
+          <p class="small"><%= link_to "View more details", market_path(market.slug) %></p>
+          <% market.listings.each do |listing| %>
+            <p class="small"><%= image_tag listing.image.url(:thumb) %> <%= listing.name %></p>
+          <% end %>
+            <%= form_tag flag_path, method: "delete" do %>
+              <%= hidden_field_tag :market_id, market.id %>
+              <%= hidden_field_tag :user_id, @user.id %>
+              <%= submit_tag "Unflag It", class: "listing-btn" %>
+            <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
   </div>
 </div>
 

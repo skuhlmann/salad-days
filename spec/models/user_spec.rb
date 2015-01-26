@@ -52,6 +52,20 @@ RSpec.describe User, :type => :model do
         user = User.create(valid_attributes)
         expect(user).to respond_to(:market)
       end
+
+      it "has many flags" do
+        user = User.create(valid_attributes)
+        expect(user).to respond_to(:flags)
+      end
+
+      it "returns it's flagged markets" do
+        user = User.create(valid_attributes)
+        other_user = create(:user)
+        market = create(:market, user: other_user)
+        market.flags.create(user_id: user.id)
+
+        expect(user.flagged_markets.first).to eq(market)
+      end
     end
 
     describe "omniauth creation" do
