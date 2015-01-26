@@ -5,7 +5,7 @@ class SearchResultsController < ApplicationController
     if params[:zip].present? && valid_zip?
       @markets = SearchResult.find_results(params[:zip])
     elsif params[:zip].present? && !valid_zip?
-      redirect_to root_path
+      redirect_to :back
       flash[:notice] = "Please enter a 5 digit zip code"
     else
       @markets = []
