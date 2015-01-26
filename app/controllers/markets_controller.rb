@@ -2,15 +2,6 @@ class MarketsController < ApplicationController
   before_action :set_market, only: [:show, :edit, :destory]
   before_action :require_market_owner, only: [:edit, :destroy]
 
-  def index
-    if params[:zip].present?
-      @markets = Market.near(params[:zip], 50)
-    else
-      @markets = Market.all
-      flash[:notice] = "Enter a zipcode to narrow your search"
-    end
-  end
-
   def show
     if @market.nil?
       flash[:notice] = "Market doesn't exist"

@@ -25,6 +25,21 @@ describe "Unauthenticated user", type: :feature do
     expect(page).to have_text(market.name)
   end
 
+  it "cannot enter a non-five digit zipcode" do
+    visit root_path
+    fill_in("zip", with: "802056")
+    click_button("Search")
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_text("Please enter a 5 digit zip code")
+
+    fill_in("zip", with: "8020")
+    click_button("Search")
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_text("Please enter a 5 digit zip code")
+  end
+
   it "is promted to search another zip code when no results are found" do
     market = create(:market, user_id: 1)
     listing = create(:listing, market_id: market.id)
