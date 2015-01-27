@@ -1,6 +1,7 @@
 class Market < ActiveRecord::Base
   has_many :listings
   has_many :flags
+  has_many :flagged_users, through: :flags, source: :user
   belongs_to :user
 
   validates :name, :user_id, :email, :street, :city, :state, :zip, presence: true
