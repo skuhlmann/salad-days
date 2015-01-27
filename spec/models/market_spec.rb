@@ -157,5 +157,10 @@ RSpec.describe Market, :type => :model do
         market = Market.create(valid_attributes)
         expect(market).to respond_to(:flags)
       end
+
+      it "has many users that have flagged it" do
+        market = Market.create(valid_attributes)
+        expect(market).to respond_to(:flagged_users)
+      end
     end
 end

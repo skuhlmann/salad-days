@@ -9,6 +9,7 @@ class Markets::ListingsController < ApplicationController
   def create
     @listing = current_market.listings.new(listing_params)
     if @listing.save
+      send_new_listing_email(current_market.flagged_users, @listing)
       flash[:notice] = "Listing Added"
       redirect_to user_path(current_user)
     else
@@ -50,6 +51,12 @@ class Markets::ListingsController < ApplicationController
     unless current_user && current_user.id == current_market.user_id
       flash[:notice] = "Unauthorized"
       redirect_to root_path
+    end
+  end
+
+  def send_new_listing_email(users, listing)
+    users.each do |user|
+      MarketMailer.new_listing_email(user, listing).deliver if user.market.exists?
     end
   end
 end

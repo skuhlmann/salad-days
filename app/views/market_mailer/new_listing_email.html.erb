@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @user.name %></h1>
+    <p>One of your flagged markets has a new listing: <%= @listing.market.name %></p>
+    <ul>Listing
+      <li>Item: <%= @listing.name %></li>
+      <li>Description: <%= @listing.description %></li>
+      <li>Harvest Date:<%= @listing.harvest_date %></li>
+    </ul>
+    <%= link_to "See more detail on SaladDays.xyz", market_path(@listing.market.slug) %>
+  </body>
+</html>
