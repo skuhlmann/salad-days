@@ -7,6 +7,10 @@ describe "Unauthenticated user", type: :feature do
     WebMock.allow_net_connect!
   end
 
+  after(:each) do
+    VCR.turn_on!
+  end
+
   it "can browse market listing by zip code" do
     market = create(:market, user_id: 1, latitude: 39.7664402, longitude: -104.9637532)
     listing = create(:listing, market_id: market.id)
