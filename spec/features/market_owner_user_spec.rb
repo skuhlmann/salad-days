@@ -7,6 +7,7 @@ describe "Market owner", type: :feature do
   end
 
   it "market owner can create their market" do
+    user = User.last
     VCR.use_cassette("geocode_3") do
       click_link("Create a Market")
       fill_in("market_name", with: "Trevor's Yard")
@@ -17,7 +18,7 @@ describe "Market owner", type: :feature do
       fill_in("market_zip", with: "80202")
       click_button("Create Market")
 
-      expect(current_path).to eq("/markets/trevor-s-yard")
+      expect(current_path).to eq(user_path(user))
       expect(page).to have_text("Trevor's Yard")
       expect(page).to have_text("80202")
     end

@@ -42,7 +42,11 @@ RSpec.configure do |config|
 end
 
 OmniAuth.config.test_mode = true
-OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({ provider: "twitter", uid: "testuid", info: { name: "Trevor", location: "Denver" }})
+OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({ provider: "twitter",
+                                                               uid: "testuid",
+                                                               info: { name: "Trevor", location: "Denver" },
+                                                               credentials: { oauth_token: "testtoken", oauth_secret: "testsecret" }
+                                                              })
 
 def log_in
   visit root_path
