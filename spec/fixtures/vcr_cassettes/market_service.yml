@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=80203
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 28 Jan 2015 20:34:35 GMT
+      Content-Length:
+      - '1240'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZXN1bHRzIjpbeyJpZCI6IjEwMDUzNjAiLCJtYXJrZXRuYW1lIjoiMC42
+        IFZOQSBGYXJtZXJzJyBNYXJrZXQifSx7ImlkIjoiMTAwMzYxOCIsIm1hcmtl
+        dG5hbWUiOiIxLjAgVGlyaSdzIEdhcmRlbiBGYXJtZXJzJyBNYXJrZXQifSx7
+        ImlkIjoiMTAwNDA2OSIsIm1hcmtldG5hbWUiOiIxLjIgRGVudmVyIFVyYmFu
+        IEhvbWVzdGVhZGluZyBGYXJtZXJzIE1hcmtldCJ9LHsiaWQiOiIxMDAzNjQw
+        IiwibWFya2V0bmFtZSI6IjEuMyBUaGUgT3NhZ2UgTWVyY2FkbyJ9LHsiaWQi
+        OiIxMDA2MDQ4IiwibWFya2V0bmFtZSI6IjEuNSBDaXR5IFBhcmsgRXNwbGFu
+        YWRlIEZyZXNoIE1hcmtldCJ9LHsiaWQiOiIxMDA2MDQ3IiwibWFya2V0bmFt
+        ZSI6IjEuNiBDaGVycnkgQ3JlZWsgRnJlc2ggTWFya2V0In0seyJpZCI6IjEw
+        MDYyNTEiLCJtYXJrZXRuYW1lIjoiMi4xIEZhaXJ2aWV3IEVsZW1lbnRhcnkg
+        WW91dGggRmFybWVycycgTWFya2V0In0seyJpZCI6IjEwMDUzMzciLCJtYXJr
+        ZXRuYW1lIjoiMi4yIEhpZ2hsYW5kIFVuaXRlZCBOZWlnaGJvcnMgRmFybWVy
+        cycgTWFya2V0In0seyJpZCI6IjEwMDIzMTIiLCJtYXJrZXRuYW1lIjoiMi40
+        IEhpZ2hsYW5kIEZhcm1lcnMgTWFya2V0In0seyJpZCI6IjEwMDIzMTMiLCJt
+        YXJrZXRuYW1lIjoiMy4wIFNvdXRoIFBlYXJsIFN0cmVldCBGYXJtZXJzJyBN
+        YXJrZXQifSx7ImlkIjoiMTAwNDk4MiIsIm1hcmtldG5hbWUiOiI0LjIgTm9y
+        dGhmaWVsZCBGYXJtZXJzJyBNYXJrZXQifSx7ImlkIjoiMTAwNzczNCIsIm1h
+        cmtldG5hbWUiOiI0LjUgTG93ZXJ5IEhhbmdlciAyIEZhcm1lcnMgTWFya2V0
+        In0seyJpZCI6IjEwMDE2NzIiLCJtYXJrZXRuYW1lIjoiNC42IExvd3J5IEZh
+        cm1lcnMnIE1hcmtldCJ9LHsiaWQiOiIxMDA2MDQ5IiwibWFya2V0bmFtZSI6
+        IjQuNyBTdGFwbGV0b24gRmFybWVycyBNYXJrZXQifSx7ImlkIjoiMTAwOTky
+        OSIsIm1hcmtldG5hbWUiOiI1LjUgQmVsbWFyIEZyZXNoIE1hcmtldCJ9LHsi
+        aWQiOiIxMDA0NjkxIiwibWFya2V0bmFtZSI6IjYuMSBXaGVhdCBSaWRnZSBG
+        YXJtZXJzJyBNYXJrZXQifSx7ImlkIjoiMTAwNDY4OSIsIm1hcmtldG5hbWUi
+        OiI2LjEgQXVyb3JhIEZhcm1lcnMgTWFya2V0In0seyJpZCI6IjEwMDUwODEi
+        LCJtYXJrZXRuYW1lIjoiNy4xIEFydmFkYSBGYXJtZXJzIE1hcmtldCJ9LHsi
+        aWQiOiIxMDA3NjUyIiwibWFya2V0bmFtZSI6IjcuNSBNYXJrZXQgYXQgRWNo
+        dGVy4oCZcyBHYXJkZW4gQ2VudGVyIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 28 Jan 2015 20:34:44 GMT
+recorded_with: VCR 2.9.3
