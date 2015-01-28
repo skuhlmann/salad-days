@@ -22,6 +22,7 @@ RSpec.describe Market, :type => :model do
       } }
 
     describe "market attributes" do
+
       before(:each) do
         @market = Market.create(valid_attributes)
       end

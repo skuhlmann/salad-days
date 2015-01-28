@@ -13,7 +13,7 @@ class Market < ActiveRecord::Base
   before_save :generate_slug, :generate_full_address
 
   geocoded_by :full_address
-  after_validation :geocode
+  after_validation :geocode, if: ->(obj){ obj.full_address.present? and obj.full_address_changed? }
 
   has_attached_file :image,
     styles: {
