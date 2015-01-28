@@ -18,7 +18,7 @@ class MarketsController < ApplicationController
     @market = Market.create(market_params)
     if @market.save
       flash[:notice] = "Market was successfully created."
-      redirect_to market_path(@market.slug)
+      redirect_to user_path(current_user)
     else
       render :new
     end

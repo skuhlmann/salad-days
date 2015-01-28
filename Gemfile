@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'geocoder'
 gem 'faraday'
 gem 'pace-rails'
+gem 'twitter'
 
 gem 'spring',        group: :development
 
@@ -37,6 +38,9 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
+end
+
+group :test do
   gem 'vcr'
   gem 'webmock'
 end

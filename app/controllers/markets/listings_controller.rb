@@ -1,6 +1,6 @@
 class Markets::ListingsController < ApplicationController
   before_action :set_listing, only: [:edit, :update, :destroy]
-  before_action :require_market_owner, except: [:contact]
+  before_action :require_market_owner, except: [:contact, :tweet]
 
   def new
     @listing = current_market.listings.new
@@ -37,6 +37,12 @@ class Markets::ListingsController < ApplicationController
     redirect_to market_path(@listing.market.slug)
   end
 
+  def tweet
+    @listing = Listing.find(params[:listing_id])
+    twitter_client.update("I've added a new item on Salad Days. #{@listing.name}")
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def listing_params
@@ -57,6 +63,15 @@ class Markets::ListingsController < ApplicationController
   def send_new_listing_email(users, listing)
     users.each do |user|
       MarketMailer.new_listing_email(user, listing).deliver if user.market.exists?
+    end
+  end
+
+  def twitter_client
+    Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV['TWITTER_API_KEY']
+      config.consumer_secret = ENV['TWITTER_SECRET']
+      config.access_token = current_user.oauth_token
+      config.access_token_secret = current_user.oauth_secret
     end
   end
 end

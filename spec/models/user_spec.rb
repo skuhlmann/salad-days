@@ -72,7 +72,8 @@ RSpec.describe User, :type => :model do
       it "can be created with omniauth" do
         auth = {"provider" => "twitter",
                 "uid" => "1234567890",
-                "info" => {"name" => "Joe Strummer"}
+                "info" => {"name" => "Joe Strummer"},
+                "credentials" => {"oauth_token" => "testtoken", "oauth_secret" => "testsecret" }
                 }
         user = User.create_with_omniauth(auth)
         expect(user).to be_valid
