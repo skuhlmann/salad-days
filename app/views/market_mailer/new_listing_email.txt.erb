@@ -1,0 +1,7 @@
+Hi <%= @user.name %>
+e of your flagged markets has a new listing!
+<%= @listing.name %>
+<%= @listing.description %>
+<%= @listing.harvest_date %>
+<%= link_to "See more detail on SaladDays.xyz", market_path(@listing.market.slug) %>
+

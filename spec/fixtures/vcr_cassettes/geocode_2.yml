@@ -1,0 +1,277 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=6000%20Vine,%20LA,%20CA,%2090028&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 27 Jan 2015 22:18:34 GMT
+      Expires:
+      - Wed, 28 Jan 2015 22:18:34 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic,p=0.02
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "6000",
+                       "short_name" : "6000",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Vine Way",
+                       "short_name" : "Vine Way",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Hollywood Hills",
+                       "short_name" : "Hollywood Hills",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Los Angeles",
+                       "short_name" : "LA",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Los Angeles County",
+                       "short_name" : "Los Angeles County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "90068",
+                       "short_name" : "90068",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "6000 Vine Way, Los Angeles, CA 90068, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 34.1091879,
+                          "lng" : -118.3267288
+                       },
+                       "southwest" : {
+                          "lat" : 34.1091726,
+                          "lng" : -118.3267289
+                       }
+                    },
+                    "location" : {
+                       "lat" : 34.1091726,
+                       "lng" : -118.3267288
+                    },
+                    "location_type" : "RANGE_INTERPOLATED",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 34.1105292302915,
+                          "lng" : -118.3253798697085
+                       },
+                       "southwest" : {
+                          "lat" : 34.1078312697085,
+                          "lng" : -118.3280778302915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "street_address" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Vine Street",
+                       "short_name" : "Vine St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Central LA",
+                       "short_name" : "Central LA",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Hollywood",
+                       "short_name" : "Hollywood",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Los Angeles",
+                       "short_name" : "LA",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Los Angeles County",
+                       "short_name" : "Los Angeles County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "90028",
+                       "short_name" : "90028",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Vine Street, Los Angeles, CA 90028, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 34.1052269,
+                          "lng" : -118.325895
+                       },
+                       "southwest" : {
+                          "lat" : 34.0938659,
+                          "lng" : -118.3273669
+                       }
+                    },
+                    "location" : {
+                       "lat" : 34.09962,
+                       "lng" : -118.3266671
+                    },
+                    "location_type" : "GEOMETRIC_CENTER",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 34.1052269,
+                          "lng" : -118.3252819697085
+                       },
+                       "southwest" : {
+                          "lat" : 34.0938659,
+                          "lng" : -118.3279799302915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "route" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "sunset + vine",
+                       "short_name" : "sunset + vine",
+                       "types" : [ "point_of_interest", "establishment" ]
+                    },
+                    {
+                       "long_name" : "1555",
+                       "short_name" : "1555",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Vine Street",
+                       "short_name" : "Vine St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Central LA",
+                       "short_name" : "Central LA",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Hollywood",
+                       "short_name" : "Hollywood",
+                       "types" : [ "sublocality_level_1", "sublocality", "political" ]
+                    },
+                    {
+                       "long_name" : "Los Angeles",
+                       "short_name" : "LA",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Los Angeles County",
+                       "short_name" : "Los Angeles County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "California",
+                       "short_name" : "CA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "90028",
+                       "short_name" : "90028",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "sunset + vine, 1555 Vine Street, Los Angeles, CA 90028, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 34.0992042,
+                       "lng" : -118.3270418
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 34.10055318029149,
+                          "lng" : -118.3256928197085
+                       },
+                       "southwest" : {
+                          "lat" : 34.09785521970849,
+                          "lng" : -118.3283907802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "point_of_interest", "establishment" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 22:18:34 GMT
+recorded_with: VCR 2.9.3

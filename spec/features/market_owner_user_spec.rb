@@ -7,18 +7,20 @@ describe "Market owner", type: :feature do
   end
 
   it "market owner can create their market" do
-    click_link("Create a Market")
-    fill_in("market_name", with: "Trevor's Yard")
-    fill_in("market_email", with: "trev@example.com")
-    fill_in("market_street", with: "123 main")
-    fill_in("market_city", with: "Denver")
-    fill_in("market_state", with: "CO")
-    fill_in("market_zip", with: "80202")
-    click_button("Create Market")
+    VCR.use_cassette("geocode_3") do
+      click_link("Create a Market")
+      fill_in("market_name", with: "Trevor's Yard")
+      fill_in("market_email", with: "trev@example.com")
+      fill_in("market_street", with: "123 main")
+      fill_in("market_city", with: "Denver")
+      fill_in("market_state", with: "CO")
+      fill_in("market_zip", with: "80202")
+      click_button("Create Market")
 
-    expect(current_path).to eq("/markets/trevor-s-yard")
-    expect(page).to have_text("Trevor's Yard")
-    expect(page).to have_text("80202")
+      expect(current_path).to eq("/markets/trevor-s-yard")
+      expect(page).to have_text("Trevor's Yard")
+      expect(page).to have_text("80202")
+    end
   end
 
   it "can see thier existing market options from their profile page" do
@@ -45,16 +47,20 @@ describe "Market owner", type: :feature do
   end
 
   it "can can edit their market" do
-    user = User.last
-    market = create(:market, user: user)
+    VCR.use_cassette("geocode_1") do
+      user = User.last
+      market = create(:market, user: user)
 
-    visit user_path(user)
-    click_link_or_button("Edit your market")
-    fill_in("market_name", with: "Race Street Farms")
-    click_button("Update Market")
+      VCR.use_cassette("geocode_4") do
+        visit user_path(user)
+        click_link_or_button("Edit your market")
+        fill_in("market_name", with: "Race Street Farms")
+        click_button("Update Market")
 
-    expect(page).to have_text("Market details updated")
-    expect(page).to have_text("Race Street Farms")
+        expect(page).to have_text("Market details updated")
+        expect(page).to have_text("Race Street Farms")
+      end
+    end
   end
 
   it "can add a new listing for thier market" do

@@ -1,0 +1,257 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=123%20Main,%20Denver,%20CO,%2080205&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 27 Jan 2015 22:24:49 GMT
+      Expires:
+      - Wed, 28 Jan 2015 22:24:49 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic,p=0.02
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Main Hall",
+                       "short_name" : "Main Hall",
+                       "types" : [ "premise" ]
+                    },
+                    {
+                       "long_name" : "Regis University",
+                       "short_name" : "Regis University",
+                       "types" : [ "establishment" ]
+                    },
+                    {
+                       "long_name" : "Regis",
+                       "short_name" : "Regis",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver County",
+                       "short_name" : "Denver County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Colorado",
+                       "short_name" : "CO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "80221",
+                       "short_name" : "80221",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Main Hall, Regis University, Denver, CO 80221, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 39.7907634,
+                          "lng" : -105.0329154
+                       },
+                       "southwest" : {
+                          "lat" : 39.7904114,
+                          "lng" : -105.0339813
+                       }
+                    },
+                    "location" : {
+                       "lat" : 39.7904939,
+                       "lng" : -105.0331396
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.7919363802915,
+                          "lng" : -105.0320993697085
+                       },
+                       "southwest" : {
+                          "lat" : 39.7892384197085,
+                          "lng" : -105.0347973302915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "premise" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Main Street",
+                       "short_name" : "Main St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Jefferson County",
+                       "short_name" : "Jefferson County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Colorado",
+                       "short_name" : "CO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "80226",
+                       "short_name" : "80226",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Main Street, Denver, CO 80226, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 39.7164372,
+                          "lng" : -105.1095888
+                       },
+                       "southwest" : {
+                          "lat" : 39.7144902,
+                          "lng" : -105.1131421
+                       }
+                    },
+                    "location" : {
+                       "lat" : 39.7155271,
+                       "lng" : -105.1113468
+                    },
+                    "location_type" : "GEOMETRIC_CENTER",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.7168126802915,
+                          "lng" : -105.1095888
+                       },
+                       "southwest" : {
+                          "lat" : 39.7141147197085,
+                          "lng" : -105.1131421
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "route" ]
+              },
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Main Avenue",
+                       "short_name" : "Main Ave",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Jefferson County",
+                       "short_name" : "Jefferson County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Colorado",
+                       "short_name" : "CO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "80226",
+                       "short_name" : "80226",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "Main Avenue, Denver, CO 80226, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 39.7166337,
+                          "lng" : -105.1131421
+                       },
+                       "southwest" : {
+                          "lat" : 39.715272,
+                          "lng" : -105.1271345
+                       }
+                    },
+                    "location" : {
+                       "lat" : 39.7154102,
+                       "lng" : -105.1201404
+                    },
+                    "location_type" : "GEOMETRIC_CENTER",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.7173018302915,
+                          "lng" : -105.1131421
+                       },
+                       "southwest" : {
+                          "lat" : 39.7146038697085,
+                          "lng" : -105.1271345
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "route" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Tue, 27 Jan 2015 22:24:48 GMT
+recorded_with: VCR 2.9.3
