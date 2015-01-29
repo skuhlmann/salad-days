@@ -1,6 +1,12 @@
 #listing {
-  margin-top: 10px;
   margin-bottom: 40px;
+  color: #4A3A47;
+  text-align: center;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: #D7E8D5;
+  padding: 30px;
   color: #4A3A47;
 }
 
@@ -12,17 +18,15 @@
 
 #listing h2 {
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 50px;
+  font-weight: 900;
 }
 
 #listing h3 {
   font-family: 'Corben', Georgia, Times, serif;
-  font-size: 15px;
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: #E8ED76;
-}
+  font-size: 25px;
+  color: white;
+  }
 
 .listing-sub {
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
