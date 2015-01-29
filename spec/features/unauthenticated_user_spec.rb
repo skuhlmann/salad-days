@@ -60,7 +60,7 @@ describe "Unauthenticated user", type: :feature do
 
     click_button("Search")
 
-    expect(page).to have_text("No results found for the zipcode: 99762. Please try another zip code.")
+    expect(page).to have_text("Nothing found here. Try again.")
   end
 
   it "is prompted to enter a zip on the search page" do

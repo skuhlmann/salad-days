@@ -1,47 +1,21 @@
 <%= render partial: "partials/market_header", locals: {markets: @markets} %>
 
-<% if empty_search? %>
-  <h5>No results found for the zipcode: <%= params[:zip] %>. Please try another zip code.
-<% end %>
+<div class="ink-grid results">
 
-<% @markets.each do |market| %>
-  <% if farmers_market?(market) %>
+<% unless successful_search? %>
   <div class="column-group">
-    <div id="listing" class="farmers">
-      <div class="all-30">
-        <div id="farmers-details">
-          <h3><%= clean_name(market.marketname) %></h3>
-          <p class="small-content">Distance from <%= params[:zip] %>: <%= market.distance %> miles</p>
-          <p class="medium-content"><%= market.Address %></p>
-          <p class="small-content"><%= "Schedule: #{market.Schedule}" if market.Schedule.presence %></p>
-          <p class="small-content"><%= "Featuring: #{market.Products}" if market.Products.presence %></p>
-        </div>
-      </div>
-      <div class="all-70 align-right">
-        <div id="farmers-map">
-          <iframe id="map" class="farmers-map" frameborder="0" style="border:0" src=<%= "https://www.google.com/maps/embed/v1/place?key=AIzaSyCzueOTNlgqagtZxGARWKl3M28HRnn57Fs&q=#{escape_address(market.Address)}" %>></iframe>
+    <div class="all-100 align-center">
+      <div id="page-form" class="ink-form page-form">
+        <div class="control-group">
+          <div class="control">
+            <%= render partial: "partials/search_form" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <% elsif !market.listings.empty? %>
-    <% market.listings.each do |listing| %>
-      <div class="column-group">
-        <div id="listing">
-          <div class="all-30">
-            <h3><%= market.name %></h3>
-            <h2><%= listing.name %></h2>
-            <p class="small-content">Distance from <%= params[:zip] %>: <%= market.distance.round(1) %> miles</p>
-            <p class="medium-content"><%= listing.description %></p>
-            <p class="small-content">Checkout the market page for location information, more details and to contact the gardener.</p>
-            <p><%= link_to "View Market Details", market_path(market.slug), class: "listing-btn" %></p>
-          </div>
-          <div class="all-60 righty">
-            <%= image_tag listing.image.url(:listing) %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
 <% end %>
+
+<%= render partial: "partials/results" %>
+
+</div>

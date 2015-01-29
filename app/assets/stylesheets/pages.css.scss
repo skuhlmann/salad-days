@@ -124,6 +124,26 @@ a:hover {
   box-shadow: none;
 }
 
+.page-form {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  padding: 25px 30px;
+  margin-bottom: 50px;
+  font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+  min-width: 375px;
+  text-align: center;
+  background: rgba(0,0,0,0);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: none;
+  border: 2px solid #4A3A47;
+  color: #4A3A47;
+}
 #page-form .search-btn {
   border-radius: 6px;
   -moz-border-radius: 6px;
@@ -202,7 +222,8 @@ a:hover {
 
 .results {
   width: 80%;
-  padding-top: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 #content-1 {
@@ -313,22 +334,30 @@ a:hover {
 }
 
 .zip {
-  text-align: right;
+  text-align: left;
+}
+
+#sub-line {
+  background-color: #4A3A47;
+  padding-top: 140px;
+  padding-left: 10%;
+  padding-right: 10%;
+
 }
 
 #sub-line h2 {
-  color: #4A3A47;
-  font-size: 40px;
-  font-weight: 900;
-  font-family: 'Nobile', Helvetica, Arial, sans-serif;
-  line-height: normal
+  color: white;
+  font-size: 28px;
+  font-family: 'Corben', Georgia, Times, serif;
+  line-height: normal;
 }
 
 #sub-line h5 {
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 40px;
   border-bottom-style: solid;
   border-width: 1px;
   border-color: #E8ED76;
+  color: white;
 }
