@@ -2,11 +2,11 @@
 
 <div class="ink-grid results">
 
-<%= render partial: "partials/user_market", locals: {:user => @user} %>
 <a name="market"></a>
+<%= render partial: "partials/user_market", locals: {:user => @user} %>
 
+<a name="listings"></a>
 <%= render partial: "partials/user_listings", locals: {:user => @user} %>
-<a name="listing"></a>
 
 <% unless @user.flagged_markets.empty? %>
   <div class="column-group">
@@ -19,7 +19,7 @@
   <div id="user-listing" class="column-group horizontal-gutters">
 <a name="flags"></a>
       <% @user.flagged_markets.each do |market| %>
-        <div class="all-50 align-center">
+        <div class="all-50 align-center spaced">
           <h4>Market: <%= market.name %></h4>
         <% market.listings.each do |listing| %>
           <p class="medium-content"><%= listing.name %></p>
