@@ -1,0 +1,14 @@
+<div id="sub-line" class="column-group">
+  <div class="all-33 zip">
+    <% if successful_search? %>
+      <h5>Found <%= markets.count %> things in <%= params[:zip] %></h5>
+    <% else %>
+      <h5>Nothing found here. Try again.
+    <% end %>
+  </div>
+  <div class="all-66 align-right">
+    <h2>Food Finder</h2>
+  </div>
+</div>
+
+

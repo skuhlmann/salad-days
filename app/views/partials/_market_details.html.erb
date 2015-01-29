@@ -1,0 +1,33 @@
+<div class="column-group horizontal-gutters">
+  <div class="all-33 market-detail align-center">
+    <div class="flagger">
+      <i class="fa fa-leaf"></i>
+      <% unless current_user.nil? %>
+        <% if is_flagged? %>
+          <p class="small-content">You've flagged this market</p>
+          <%= form_tag flag_path, method: "delete" do %>
+            <%= hidden_field_tag :market_id, market.id %>
+            <%= hidden_field_tag :user_id, current_user.id %>
+            <%= submit_tag "Unflag It", class: "flag-btn" %>
+          <% end %>
+          <% else %>
+          <p class="small-content">Flag this market to get updates on your profile page.</p>
+            <%= form_tag flag_path do %>
+              <%= hidden_field_tag :market_id, market.id %>
+              <%= hidden_field_tag :user_id, current_user.id %>
+              <%= submit_tag "Flag It", class: "flag-btn" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <div class="all-33 market-detail align-center">
+    <i class="fa fa-leaf"></i>
+    <p class="medium-content">Featured Products:<br> <%= market.products %></p>
+  </div>
+  <div class="all-33 market-detail align-center">
+    <i class="fa fa-leaf"></i>
+    <p class="medium-content">Address: <br><%= market.full_address %></p>
+  </div>
+</div>
+
