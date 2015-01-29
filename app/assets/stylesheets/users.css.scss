@@ -13,12 +13,25 @@
   height: 400px;
 }
 
+.spaced {
+ padding-top: 40px;
+}
+
+.spacing {
+  margin-bottom: 40px;
+}
+
 .ink-table {
   margin-bottom: 50px;
 }
 
+#user-listings {
+  margin-bottom: 50px;
+}
+
 #user-market {
-  padding: 5px;
+  padding: 10px;
+  margin-bottom: 50px;
 }
 
 #user-info {
@@ -27,8 +40,8 @@
 }
 
 #user-market h3 {
-  font-size: 25px;
-  font-family: 'Nobile', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-family: 'Corben', Georgia, Times, serif;
   border-bottom-style: solid;
   border-width: 1px;
   border-color: #E8ED76;

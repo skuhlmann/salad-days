@@ -61,8 +61,10 @@ class Markets::ListingsController < ApplicationController
   end
 
   def send_new_listing_email(users, listing)
-    users.each do |user|
-      MarketMailer.new_listing_email(user, listing).deliver if user.market.exists?
+    unless users.nil?
+      users.each do |user|
+        MarketMailer.new_listing_email(user, listing).deliver unless user.market.nil?
+      end
     end
   end
 

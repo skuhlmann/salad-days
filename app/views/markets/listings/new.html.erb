@@ -1,6 +1,7 @@
-<%= render partial: "partials/profile_header", locals: {:user => current_user} %>
+<%= render partial: "partials/sub_profile_header", locals: {:user => current_user} %>
 
+<div class="ink-grid results">
 <p class="medium-content">Create a Listing for <%= current_market.name.titleize %></p>
 
 <%= render 'form' %>
-
+</div>
