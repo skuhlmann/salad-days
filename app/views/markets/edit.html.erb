@@ -1,4 +1,7 @@
-<%= render partial: "partials/profile_header", locals: {:user => current_user} %>
+<%= render partial: "partials/sub_profile_header", locals: {:user => current_user} %>
 
-<p class="medium-content">Editing <%= @market.name %></p>
+<div class="ink-grid results">
+  <p class="medium-content">Editing <%= @market.name %></p>
   <%= render 'form' %>
+
+</div>

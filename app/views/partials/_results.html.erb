@@ -17,7 +17,7 @@
   </div>
 
   <% elsif !market.listings.empty? %>
-    <% market.listings.each do |listing| %>
+    <% market.listings.active.each do |listing| %>
       <div class="column-group">
       <div class="all-5"></div>
         <div id="listing" class="all-90">

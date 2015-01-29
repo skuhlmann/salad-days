@@ -1,14 +1,14 @@
 <div id="sub-line" class="column-group">
   <div class="all-33 zip">
-    <% if successful_search? %>
-      <h5>Found <%= markets.count %> things in <%= params[:zip] %></h5>
-    <% else %>
-      <h5>Nothing found here. Try again.
-    <% end %>
+    <h5><a href="#details">Details</a> |
+      <a href="#map">Map</a> |
+      <% unless @market.listings.empty? %>
+        <a href="#listings">Listings</a>
+      <% end %>
+    </h5>
   </div>
   <div class="all-66 align-right">
-    <h2>Food Finder</h2>
+    <h2><%= market.name.titleize %></h2>
   </div>
 </div>
-
 

@@ -11,6 +11,11 @@ p {
   line-height: 25px;
 }
 
+img {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
 
 #welcome {
   margin-left: 60%;
@@ -37,7 +42,7 @@ p {
 }
 
 .note{
-  color: #4A3A47;
+  color: #FFCD57;
   font-size: 20px;
   font-weight: 900;
   font-style: italic;
@@ -360,4 +365,12 @@ a:hover {
   border-width: 1px;
   border-color: #E8ED76;
   color: white;
+}
+
+#sub-line a {
+  color: white;
+}
+
+#sub-line a:hover {
+  color: #E8ED76;
 }

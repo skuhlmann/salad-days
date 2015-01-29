@@ -5,7 +5,6 @@ describe "Authentication flow", type: :feature do
   it "can sign up with twitter" do
     log_in
     expect(page).to have_text("Trevor")
-    expect(page).to have_text("Denver")
     expect(page).to have_text("Create a Market")
   end
 

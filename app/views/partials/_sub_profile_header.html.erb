@@ -1,11 +1,5 @@
 <div id="sub-line" class="column-group">
   <div class="all-33 zip">
-    <h5><a href="#market">Market</a> |
-      <a href="#listings">Listings</a> |
-      <% unless user.flagged_markets.empty? %>
-      <a href="#flags">Flags</a>
-    <% end %>
-    </h5>
   </div>
   <div class="all-66 align-right">
     <h2><%= user.name %>  <%= image_tag user.image, size: "40x40" %></h2>

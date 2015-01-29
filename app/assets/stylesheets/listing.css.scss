@@ -14,12 +14,26 @@
   border-radius: 6px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+#user-listing img {
+  height: 200px;
+}
+
+#user-listing h4 {
+  font-family: 'Corben', Georgia, Times, serif;
+  font-size: 14px;
+  color: #4A3A47;
 }
 
 #listing h2 {
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
   font-size: 50px;
   font-weight: 900;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #E8ED76;
 }
 
 #listing h3 {
@@ -30,7 +44,7 @@
 
 .listing-sub {
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 900;
   background-color: #E8ED76;
   border-radius: 6px;
@@ -38,6 +52,7 @@
   -webkit-border-radius: 6px;
   padding: 10px;
   text-align: center;
+  font-style: italic;
 }
 
 .market-sub {
@@ -93,6 +108,47 @@ hr {
   box-shadow: none;
 }
 
+.flag-btn {
+  width: 90%;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  padding: 8px 15px;
+  font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: normal;
+  color: #4A3A47;
+  border: 3px solid #4A3A47;
+  text-align: center;
+  background: rgba(0,0,0,0);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: none;
+}
+
+.user-listing-btn {
+  width: 90%;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  padding: 8px 15px;
+  font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: normal;
+  color: #D7E8D5;
+  border: 3px solid #D7E8D5;
+  text-align: center;
+  background: rgba(0,0,0,0);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: none;
+}
+
+
 .market-nav {
   font-family: 'Nobile', Helvetica, Arial, sans-serif;
   border-bottom-style: solid;
@@ -114,4 +170,11 @@ hr {
 .map {
   width: 100%;
   height: 300px;
+}
+
+.market-detail {
+  margin-bottom: 20px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #E8ED76;
 }

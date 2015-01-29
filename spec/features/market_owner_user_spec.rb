@@ -24,7 +24,7 @@ describe "Market owner", type: :feature do
     end
   end
 
-  it "can see thier existing market options from their profile page" do
+  it "can see their existing market options from their profile page" do
     user = User.last
     market = create(:market, user: user)
 
@@ -41,7 +41,7 @@ describe "Market owner", type: :feature do
 
     visit user_path(user)
 
-    expect(page).to have_text("Current Listings")
+    expect(page).to have_text("Your Listings")
     expect(page).to have_text("A Listing")
     expect(page).to have_text("Listing details")
     expect(page).to have_text(listing.harvest_date)
@@ -69,7 +69,7 @@ describe "Market owner", type: :feature do
     market = create(:market, user: user)
 
     visit user_path(user)
-    click_link_or_button("Add a listing")
+    click_link_or_button("Add a Listing")
     fill_in("listing_name", with: "Turnip")
     fill_in("listing_description", with: "A description")
     select("2015", from: "listing_harvest_date_1i")

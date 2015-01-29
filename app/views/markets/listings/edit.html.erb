@@ -1,35 +1,36 @@
-<%= render partial: "partials/profile_header", locals: {:user => current_user} %>
+<%= render partial: "partials/sub_profile_header", locals: {:user => current_user} %>
 
-<p class="medium-content">Editing <%= @listing.name %></p>
+<div class="ink-grid results">
+  <p class="medium-content">Editing <%= @listing.name %></p>
 
-<div id="salad-form">
-  <%= form_tag({controller: "listings", action: "update"}, method: "put", multipart: true, class: "ink-form") do %>
-    <div class="column-group">
-      <div class="control-group required all-50">
-        <%= label_tag(:name) %></br>
-        <%= text_field(:listing, :name) %>
+  <div id="salad-form">
+    <%= form_tag({controller: "listings", action: "update"}, method: "put", multipart: true, class: "ink-form") do %>
+      <div class="column-group">
+        <div class="control-group required all-50">
+          <%= label_tag(:name) %></br>
+          <%= text_field(:listing, :name) %>
+        </div>
+        <div class="control-group required all-50">
+          <%= label_tag(:harvest_date) %>
+          <%= date_field(:listing, :harvest_date) %>
+        </div>
+        <div class="control-group required all-50">
+          <%= label_tag(:description) %>
+          <%= text_area(:listing, :description) %>
+        </div>
+        <div class="control-group required all-50">
+          <% if  @listing.image.exists? %>
+            <%= image_tag @listing.image.url(:thumb) %><br />
+          <% end %>
+          <%= label_tag(:image, "Attach or change image") %><br />
+          <%= file_field(:listing, :image) %>
+        </div>
+        <div class="all-10"></div>
+        <div class="control-group all-80">
+          <%= submit_tag "Update Listing", class: "listing-btn" %>
+        </div>
+        <div class="all-10"></div>
       </div>
-      <div class="control-group required all-50">
-        <%= label_tag(:harvest_date) %>
-        <%= date_field(:listing, :harvest_date) %>
-      </div>
-      <div class="control-group required all-50">
-        <%= label_tag(:description) %>
-        <%= text_area(:listing, :description) %>
-      </div>
-      <div class="control-group required all-50">
-        <% if  @listing.image.exists? %>
-          <%= image_tag @listing.image.url(:thumb) %><br />
-        <% end %>
-        <%= label_tag(:image, "Attach or change image") %><br />
-        <%= file_field(:listing, :image) %>
-      </div>
-      <div class="all-10"></div>
-      <div class="control-group all-80">
-        <%= submit_tag "Update Listing", class: "listing-btn" %>
-      </div>
-      <div class="all-10"></div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-

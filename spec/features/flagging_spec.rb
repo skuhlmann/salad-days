@@ -42,7 +42,7 @@ describe "Flagging flow", type: :feature do
       click_button("Flag It")
       visit user_path(user)
 
-      expect(page).to have_text("Flagged market activity")
+      expect(page).to have_text("Your Flagged Market Activity")
       expect(page).to have_text("A Listing")
       expect(page).to have_text("The Market")
       expect(page).to have_link("View more detail")
