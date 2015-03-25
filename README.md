@@ -9,13 +9,20 @@ Salad Days gives you information about local food sources. The application allow
 ## Installation
 
 Clone Salad Days to your local machine with:
+
 git clone git@github.com:skuhlmann/salad-days.git
 
-Install gems with: bundle install
+Install gems with:
 
-Then setup the database: rake db:setup
+bundle install
 
-Launch the server with: rails s
+Then setup the database:
+
+rake db:setup
+
+Launch the server with:
+
+rails s
 
 Go to localhost:3000
 
