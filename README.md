@@ -2,7 +2,7 @@
 
 Local food for local you.
 
-(https://saladdays.xyz "Salad Days Production Application")
+[Salad Days in Production](https://saladdays.xyz)
 
 Salad Days gives you information about local food sources. The application allows you to create a market and share food you've grown, and to search for farmer's markets and user markets in your area.
 
